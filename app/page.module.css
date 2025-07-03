@@ -76,6 +76,7 @@
   box-shadow: 0 4px 12px #00000080;
   backdrop-filter: blur(8px);
 }
+
 .active {
   color: #cddc39;
 }
@@ -90,6 +91,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .heroText {
   font-size: 100px;
   font-weight: 900;
@@ -120,6 +122,7 @@
   flex-direction: column;
   gap: 31px;
 }
+
 .ishika {
   display: flex;
   flex-direction: row;
@@ -130,6 +133,7 @@
   display: inline-block;
   vertical-align: middle;
 }
+
 .text {
   font-size: 18px;
   font-weight: bold;
@@ -275,4 +279,621 @@
 .shadowButton:hover {
   transform: translateY(-2px);
   box-shadow: 8px 8px 0 #49034f;
+}
+
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background-color: #fffbf3;
+}
+
+.container2 {
+  position: relative;
+  max-width: 1150px;
+  width: 100%;
+  border-radius: 39px;
+  background: #3972eb;
+  border: 2px solid #000;
+  padding: 3rem 2rem;
+  color: #fff;
+  font-family: 'Cal Sans', sans-serif;
+  display: flex;
+  gap: 3rem;
+  box-shadow: 10px 10px 0px #ffa5a5;
+  flex-wrap: wrap;
+}
+
+.left,
+.right {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.badge {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  padding: 6px 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Nexa Round Trial', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.description {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff8e9;
+  margin-bottom: 1.5rem;
+}
+
+.cta {
+  background: #fff;
+  color: #768fc0;
+  font-family: 'Geist', sans-serif;
+  font-weight: 700;
+  padding: 10px 27px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.teamNote {
+  font-family: 'Nexa Round Trial', sans-serif;
+  font-size: 18px;
+  opacity: 0.6;
+  line-height: 160%;
+  margin-bottom: 0.25rem;
+}
+
+.teamComing {
+  font-family: 'Nexa Round Trial', sans-serif;
+  font-size: 32px;
+  font-weight: 950;
+  line-height: 120%;
+}
+
+.price {
+  background: #fff;
+  color: #3972eb;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  padding: 10px 40px;
+  border-radius: 49px;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.feature {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 32px;
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 600;
+}
+
+.feature::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .price {
+    margin: 1.5rem auto;
+  }
+
+  .feature {
+    text-align: left;
+  }
+}
+
+
+/* Built by the best section */
+.wrapperIcon {
+  position: relative;
+  width: 100%;
+  max-width: 794px;
+  margin: 2rem auto;
+  background: #FFFBF3;
+  padding: 40px;
+  text-align: center;
+}
+
+.badgeTitle {
+  display: inline-block;
+  padding: 10px 40px;
+  border: 2px solid #0F9182;
+  border-radius: 100px;
+  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-weight: 950;
+  font-size: 24px;
+  color: #0F9182;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-weight: 950;
+  font-size: 32px;
+  color: #0F9182;
+  line-height: 120%;
+  margin: 20px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0F9182;
+  opacity: 0.6;
+  line-height: 160%;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  max-width: 615px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  transform: rotate(-0.38deg);
+  min-width: 200px;
+}
+
+.iconBox {
+  width: 45.66px;
+  height: 46.23px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  flex-shrink: 0;
+  border: 1px solid;
+  box-shadow: 0px 2px 10px;
+  transform: rotate(-0.38deg);
+}
+
+.iconBox img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%);
+}
+
+
+.iconPink {
+  background: linear-gradient(180deg, #EB69F9 0%, #FACBFF 100%);
+  border: 1px solid #7F0F91;
+  box-shadow: 0px 2px 10px #EA65FF;
+}
+
+.iconPurple {
+  background: linear-gradient(180deg, #7069F9 0%, #CBDAFF 100%);
+  border: 1px solid #0F1C91;
+  box-shadow: 0px 2px 10px #6581FF;
+}
+
+.iconOrange {
+  background: linear-gradient(180deg, #F9CC69 0%, #FFE8CB 100%);
+  border: 1px solid #FBAA1E;
+  box-shadow: 0px 2px 10px #FFC965;
+}
+
+.iconBlue {
+  background: linear-gradient(180deg, #69E4F9 0%, #CBFDFF 100%);
+  border: 1px solid #0F7B91;
+  box-shadow: 0px 2px 10px #65CEFF;
+}
+
+.iconGreen {
+  background: linear-gradient(180deg, #69F97C 0%, #CBFFDC 100%);
+  border: 1px solid #05F21C;
+  box-shadow: 0px 2px 10px #65FF86;
+}
+
+.iconRed {
+  background: linear-gradient(180deg, #F96969 0%, #FFCBCC 100%);
+  border: 1px solid #FB1E22;
+  box-shadow: 0px 2px 10px #FF6567;
+}
+
+.featureText {
+  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #161616;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .featureItem {
+    min-width: auto;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .builtTitle {
+    font-size: 24px;
+  }
+
+  .builtSubtitle {
+    font-size: 16px;
+  }
+
+  .badge2 {
+    font-size: 16px;
+    padding: 8px 30px;
+  }
+}
+
+/* Feature Boxes Grid Layout - matching existing pattern */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Individual Feature Card - matching existing card pattern */
+.card {
+  position: relative;
+  background: #FDF5E4;
+  border-radius: 34px;
+  padding: 32px;
+  border: 2px solid #000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 434px;
+  transition: transform 0.2s ease;
+}
+
+/* Shadow effect using pseudo-element - matching existing pattern */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  background: #FF9A9C;
+  border: 2px solid #000000;
+  border-radius: 34px;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Color variations for cards using pseudo-element pattern */
+.card.blue {
+  background: #E6F0FF;
+}
+
+.card.blue::before {
+  background: #6B9AFF;
+}
+
+.card.green {
+  background: #E8FFF2;
+}
+
+.card.green::before {
+  background: #85D085;
+}
+
+.card.yellow {
+  background: #FFF4E1;
+}
+
+.card.yellow::before {
+  background: #FFD266;
+}
+
+.card.pink {
+  background: #FFE8E8;
+}
+
+.card.pink::before {
+  background: #FF9A9C;
+}
+
+/* Icon container */
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.feature-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Feature title */
+.feature-title {
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 950;
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #573B03;
+  margin: 0 0 15px 0;
+}
+
+/* Feature description */
+.feature-description {
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  color: #573B03;
+  margin: 0 0 25px 0;
+  flex-grow: 1;
+}
+
+/* Feature action box */
+.feature-action {
+  background: #FFFFFF;
+  opacity: 0.9;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* Action button/progress bar */
+.action-progress {
+  background: #ECECEC;
+  border-radius: 100px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #573B03;
+}
+
+/* Action button */
+.action-button {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background: #357ABD;
+}
+
+/* Feature list items */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #573B03;
+}
+
+.feature-list-item::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge/tag styling */
+.feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #B8860B;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-badge .emoji {
+  font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .feature-box {
+    padding: 30px 20px;
+    min-height: 350px;
+  }
+
+  .feature-title {
+    font-size: 24px;
+  }
+
+  .feature-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-title {
+    font-size: 22px;
+  }
+
+  .feature-description {
+    font-size: 14px;
+  }
+
+  .feature-box {
+    padding: 25px 15px;
+    min-height: 320px;
+  }
+}
+
+/* Specific box layouts for different content types */
+
+/* Upload box specific styles */
+.upload-box .feature-action {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upload-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.upload-progress::before {
+  content: "⚡";
+  font-size: 16px;
+}
+
+/* Template box specific styles */
+.template-box .feature-list {
+  margin-top: 10px;
+}
+
+/* Settings box specific styles */
+.settings-box .action-button {
+  background: #4CAF50;
+  width: 100%;
+}
+
+.settings-box .action-button:hover {
+  background: #45a049;
+}
+
+/* Drive integration box styles */
+.drive-box .feature-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.drive-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.drive-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-drive {
+  background: #4285F4;
+}
+
+.rocket-icon {
+  background: #FF6B6B;
 }
