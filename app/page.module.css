@@ -63,20 +63,6 @@
   color: #dddddd;
 }
 
-.navbarWrapper {
-  position: relative;
-  top: 0;
-  z-index: 50;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  right: 30;
-  box-shadow: 0 4px 12px #00000080;
-  backdrop-filter: blur(8px);
-}
-
 .active {
   color: #cddc39;
 }
@@ -121,6 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 31px;
+  padding-top: 120px;
 }
 
 .ishika {
@@ -230,7 +217,7 @@
   margin-bottom: 26px;
 }
 
-.title {
+.title1 {
   font-size: 32px;
   font-weight: 900;
   line-height: 1.2;
@@ -240,7 +227,7 @@
   margin-bottom: 24px;
 }
 
-.subtitle {
+.subtitle1 {
   max-width: 618px;
   width: 100%;
   font-size: 18px;
@@ -281,13 +268,9 @@
   box-shadow: 8px 8px 0 #49034f;
 }
 
-
-
-
 .wrapper {
   display: flex;
   justify-content: center;
-  padding: 4rem 1rem;
   background-color: #fffbf3;
 }
 
@@ -298,23 +281,24 @@
   border-radius: 39px;
   background: #3972eb;
   border: 2px solid #000;
-  padding: 3rem 2rem;
+  padding: 31px 33px;
   color: #fff;
-  font-family: 'Cal Sans', sans-serif;
+  font-family: "Cal Sans", sans-serif;
   display: flex;
   gap: 3rem;
+  justify-content: space-between;
   box-shadow: 10px 10px 0px #ffa5a5;
   flex-wrap: wrap;
 }
 
 .left,
 .right {
-  flex: 1 1 300px;
+  /* flex: 1 1 1; */
   min-width: 280px;
 }
 
 .badge {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   padding: 6px 20px;
   border: 1px solid white;
@@ -323,25 +307,27 @@
   margin-bottom: 1rem;
 }
 
-.title {
-  font-family: 'Nexa Round Trial', sans-serif;
+.title2 {
+  font-family: "Nexa Round Trial", sans-serif;
   font-size: 32px;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
 
 .description {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   line-height: 1.6;
   color: #fff8e9;
+  max-width: 313px;
+  width: 100%;
   margin-bottom: 1.5rem;
 }
 
 .cta {
   background: #fff;
   color: #768fc0;
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 700;
   padding: 10px 27px;
   border-radius: 20px;
@@ -352,7 +338,7 @@
 }
 
 .teamNote {
-  font-family: 'Nexa Round Trial', sans-serif;
+  font-family: "Nexa Round Trial", sans-serif;
   font-size: 18px;
   opacity: 0.6;
   line-height: 160%;
@@ -360,7 +346,7 @@
 }
 
 .teamComing {
-  font-family: 'Nexa Round Trial', sans-serif;
+  font-family: "Nexa Round Trial", sans-serif;
   font-size: 32px;
   font-weight: 950;
   line-height: 120%;
@@ -369,7 +355,7 @@
 .price {
   background: #fff;
   color: #3972eb;
-  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-family: "Arial Rounded MT Bold", sans-serif;
   font-size: 48px;
   font-weight: 400;
   padding: 10px 40px;
@@ -390,7 +376,7 @@
   margin-bottom: 1rem;
   position: relative;
   padding-left: 32px;
-  font-family: 'Cal Sans', sans-serif;
+  font-family: "Cal Sans", sans-serif;
   font-weight: 600;
 }
 
@@ -401,7 +387,6 @@
   color: #fff;
   font-size: 18px;
 }
-
 
 @media (max-width: 768px) {
   .container {
@@ -420,14 +405,13 @@
   }
 }
 
-
 /* Built by the best section */
 .wrapperIcon {
   position: relative;
   width: 100%;
   max-width: 794px;
-  margin: 2rem auto;
-  background: #FFFBF3;
+  margin: 0 auto;
+  background: #fffbf3;
   padding: 40px;
   text-align: center;
 }
@@ -435,31 +419,38 @@
 .badgeTitle {
   display: inline-block;
   padding: 10px 40px;
-  border: 2px solid #0F9182;
+  border: 2px solid #0f9182;
   border-radius: 100px;
-  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-family: "Inter", "Quicksand", sans-serif;
   font-weight: 950;
   font-size: 24px;
-  color: #0F9182;
+  color: #0f9182;
   opacity: 0.7;
   margin-bottom: 1rem;
 }
 
 .title {
-  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-family: "Inter", "Quicksand", sans-serif;
   font-weight: 950;
   font-size: 32px;
-  color: #0F9182;
+  color: #0f9182;
   line-height: 120%;
   margin: 20px 0;
   letter-spacing: -0.02em;
 }
 
+.price1 {
+  font-size: 32px;
+  letter-spacing: -0.64px;
+  text-align: left;
+  color: #fff;
+}
+
 .subtitle {
-  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-family: "Inter", "Quicksand", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: #0F9182;
+  color: #0f9182;
   opacity: 0.6;
   line-height: 160%;
   margin-bottom: 40px;
@@ -468,7 +459,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .featuresGrid {
   display: grid;
@@ -510,52 +500,50 @@
   filter: brightness(0) saturate(100%);
 }
 
-
 .iconPink {
-  background: linear-gradient(180deg, #EB69F9 0%, #FACBFF 100%);
-  border: 1px solid #7F0F91;
-  box-shadow: 0px 2px 10px #EA65FF;
+  background: linear-gradient(180deg, #eb69f9 0%, #facbff 100%);
+  border: 1px solid #7f0f91;
+  box-shadow: 0px 2px 10px #ea65ff;
 }
 
 .iconPurple {
-  background: linear-gradient(180deg, #7069F9 0%, #CBDAFF 100%);
-  border: 1px solid #0F1C91;
-  box-shadow: 0px 2px 10px #6581FF;
+  background: linear-gradient(180deg, #7069f9 0%, #cbdaff 100%);
+  border: 1px solid #0f1c91;
+  box-shadow: 0px 2px 10px #6581ff;
 }
 
 .iconOrange {
-  background: linear-gradient(180deg, #F9CC69 0%, #FFE8CB 100%);
-  border: 1px solid #FBAA1E;
-  box-shadow: 0px 2px 10px #FFC965;
+  background: linear-gradient(180deg, #f9cc69 0%, #ffe8cb 100%);
+  border: 1px solid #fbaa1e;
+  box-shadow: 0px 2px 10px #ffc965;
 }
 
 .iconBlue {
-  background: linear-gradient(180deg, #69E4F9 0%, #CBFDFF 100%);
-  border: 1px solid #0F7B91;
-  box-shadow: 0px 2px 10px #65CEFF;
+  background: linear-gradient(180deg, #69e4f9 0%, #cbfdff 100%);
+  border: 1px solid #0f7b91;
+  box-shadow: 0px 2px 10px #65ceff;
 }
 
 .iconGreen {
-  background: linear-gradient(180deg, #69F97C 0%, #CBFFDC 100%);
-  border: 1px solid #05F21C;
-  box-shadow: 0px 2px 10px #65FF86;
+  background: linear-gradient(180deg, #69f97c 0%, #cbffdc 100%);
+  border: 1px solid #05f21c;
+  box-shadow: 0px 2px 10px #65ff86;
 }
 
 .iconRed {
-  background: linear-gradient(180deg, #F96969 0%, #FFCBCC 100%);
-  border: 1px solid #FB1E22;
-  box-shadow: 0px 2px 10px #FF6567;
+  background: linear-gradient(180deg, #f96969 0%, #ffcbcc 100%);
+  border: 1px solid #fb1e22;
+  box-shadow: 0px 2px 10px #ff6567;
 }
 
 .featureText {
-  font-family: 'Inter', 'Quicksand', sans-serif;
+  font-family: "Inter", "Quicksand", sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #161616;
   line-height: 130%;
   letter-spacing: -0.02em;
 }
-
 
 @media (max-width: 768px) {
   .featuresGrid {
@@ -598,7 +586,7 @@
 /* Individual Feature Card - matching existing card pattern */
 .card {
   position: relative;
-  background: #FDF5E4;
+  background: #fdf5e4;
   border-radius: 34px;
   padding: 32px;
   border: 2px solid #000000;
@@ -610,13 +598,13 @@
 
 /* Shadow effect using pseudo-element - matching existing pattern */
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 8px;
   left: 8px;
   right: -8px;
   bottom: -8px;
-  background: #FF9A9C;
+  background: #ff9a9c;
   border: 2px solid #000000;
   border-radius: 34px;
   z-index: -1;
@@ -628,42 +616,42 @@
 
 /* Color variations for cards using pseudo-element pattern */
 .card.blue {
-  background: #E6F0FF;
+  background: #e6f0ff;
 }
 
 .card.blue::before {
-  background: #6B9AFF;
+  background: #6b9aff;
 }
 
 .card.green {
-  background: #E8FFF2;
+  background: #e8fff2;
 }
 
 .card.green::before {
-  background: #85D085;
+  background: #85d085;
 }
 
 .card.yellow {
-  background: #FFF4E1;
+  background: #fff4e1;
 }
 
 .card.yellow::before {
-  background: #FFD266;
+  background: #ffd266;
 }
 
 .card.pink {
-  background: #FFE8E8;
+  background: #ffe8e8;
 }
 
 .card.pink::before {
-  background: #FF9A9C;
+  background: #ff9a9c;
 }
 
 /* Icon container */
 .feature-icon {
   width: 48px;
   height: 48px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -676,34 +664,33 @@
   height: 24px;
 }
 
-/* Feature title */
 .feature-title {
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-style: normal;
   font-weight: 950;
   font-size: 28px;
   line-height: 120%;
   letter-spacing: -0.02em;
-  color: #573B03;
+  color: #573b03;
   margin: 0 0 15px 0;
 }
 
 /* Feature description */
 .feature-description {
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: -0.02em;
-  color: #573B03;
+  color: #573b03;
   margin: 0 0 25px 0;
   flex-grow: 1;
 }
 
 /* Feature action box */
 .feature-action {
-  background: #FFFFFF;
+  background: #ffffff;
   opacity: 0.9;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
   border-radius: 24px;
@@ -713,26 +700,26 @@
 
 /* Action button/progress bar */
 .action-progress {
-  background: #ECECEC;
+  background: #ececec;
   border-radius: 100px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #573B03;
+  color: #573b03;
 }
 
 /* Action button */
 .action-button {
-  background: #4A90E2;
+  background: #4a90e2;
   color: white;
   border: none;
   border-radius: 100px;
   padding: 12px 24px;
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -740,7 +727,7 @@
 }
 
 .action-button:hover {
-  background: #357ABD;
+  background: #357abd;
 }
 
 /* Feature list items */
@@ -755,17 +742,17 @@
   align-items: center;
   gap: 12px;
   padding: 8px 0;
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-weight: 600;
   font-size: 14px;
-  color: #573B03;
+  color: #573b03;
 }
 
 .feature-list-item::before {
   content: "";
   width: 20px;
   height: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 50%;
   flex-shrink: 0;
   display: flex;
@@ -781,10 +768,10 @@
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   padding: 8px 16px;
-  font-family: 'Nexa Round_Trial', Arial, sans-serif;
+  font-family: "Nexa Round_Trial", Arial, sans-serif;
   font-weight: 700;
   font-size: 13px;
-  color: #B8860B;
+  color: #b8860b;
   margin-bottom: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -860,7 +847,7 @@
 
 /* Settings box specific styles */
 .settings-box .action-button {
-  background: #4CAF50;
+  background: #4caf50;
   width: 100%;
 }
 
@@ -891,9 +878,9 @@
 }
 
 .google-drive {
-  background: #4285F4;
+  background: #4285f4;
 }
 
 .rocket-icon {
-  background: #FF6B6B;
+  background: #ff6b6b;
 }

@@ -116,7 +116,6 @@ export default function Home() {
           <img src={logo.src} alt="logo" width={48} height={48} />
           <div className={styles.logo}>Blip</div>
         </div>
-
         <div className={styles.navbar}>
           {["about", "pricing", "features"].map((item) => (
             <a
@@ -141,7 +140,7 @@ export default function Home() {
               quickest
             </span>
             <br />
-            bulk ad uploader{" "}
+            bulk ad uploader
             <span className={styles.inlineIcon}>
               <img src={star.src} alt="sparkles" width={120} height={120} />
               for Meta.
@@ -199,10 +198,10 @@ export default function Home() {
             <img src={rose.src} width={24} height={24} alt="rose" />
             Escape from Button Clicking Hell
           </div>
-          <div className={styles.title}>
+          <div className={styles.title1}>
             The fastest way to manage multiple ad accounts
           </div>
-          <div className={styles.subtitle}>
+          <div className={styles.subtitle1}>
             End context-switching whiplash. No more selecting the same settings
             over and over, copy-pasting text dozens of times, or sluggish UI.
           </div>
@@ -229,22 +228,22 @@ export default function Home() {
         <div className={styles.grid}>
           {features2.map((feature, i) => (
             <div key={i} className={`${styles.card} ${styles[feature.type]}`}>
-              {/* <div className={styles.tag}>{feature.tag}</div>
-            <h3 className={styles.title}>{feature.title}</h3>
-            <p className={styles.description}>{feature.description}</p>
-            <ul className={styles.highlightList}>
-              {feature.highlights.map((item, idx) => (
-                <li key={idx} className={styles.highlight}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            {feature.button && (
-              <button className={styles.button}>{feature.button}</button>
-            )}
-            {feature.footer && (
-              <div className={styles.footerIcon}>{feature.footer}</div>
-            )} */}
+              <div className={styles.tag}>{feature.tag}</div>
+              <h3 className={styles.title2}>{feature.title}</h3>
+              <p className={styles.description}>{feature.description}</p>
+              <ul className={styles.highlightList}>
+                {feature.highlights.map((item, idx) => (
+                  <li key={idx} className={styles.highlight}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              {feature.button && (
+                <button className={styles.button}>{feature.button}</button>
+              )}
+              {feature.footer && (
+                <div className={styles.footerIcon}>{feature.footer}</div>
+              )}
             </div>
           ))}
         </div>
@@ -283,7 +282,7 @@ export default function Home() {
               <div className={styles.badge}>
                 1 Flat Price. Unlimited Ad Accounts
               </div>
-              <h2 className={styles.title}>Pricing</h2>
+              <h2 className={styles.price1}>Pricing</h2>
               <p className={styles.description}>
                 UTMs, page selections, ad name formulas — all saved, per ad
                 account, so nothing resets on reload.
@@ -292,7 +291,7 @@ export default function Home() {
               <p className={styles.teamNote}>
                 have a lot of people on your team?
               </p>
-              <h3 className={styles.teamComing}>Team seats Coming Soon</h3>
+              <p className={styles.teamComing}>Team seats Coming Soon</p>
             </div>
 
             <div className={styles.right}>
