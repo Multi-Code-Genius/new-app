@@ -7,9 +7,7 @@ import heroFormImg from "../assets/hero-form.webp";
 import logoImg from "../assets/logo.webp";
 import fileIcon from "../assets/file.svg";
 import tIcon from "../assets/t.svg";
-import tBlueIcon from "../assets/tBlue.svg";
 import chromeIcon from "../assets/chrome.svg";
-import rocketIcon from "../assets/rocket.svg";
 import settingsIcon from "../assets/settings.svg";
 import checkIcon from "../assets/check.svg";
 import avatar1 from "../assets/avatar1.png";
@@ -38,7 +36,6 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
-    // Handle clicks outside the mobile menu
     const handleClickOutside = (event) => {
       if (
         menuOpen &&
@@ -61,8 +58,7 @@ const Landing = () => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
-      // Get the navbar height to offset the scroll position - account for top margin
-      const navbarHeight = 105; // 75px navbar + 30px top margin
+      const navbarHeight = 105;
       const sectionPosition = section.getBoundingClientRect().top;
       const offsetPosition =
         sectionPosition + window.pageYOffset - navbarHeight;
@@ -72,7 +68,6 @@ const Landing = () => {
         behavior: "smooth",
       });
 
-      // Close mobile menu if open
       if (menuOpen) setMenuOpen(false);
     }
   };
@@ -135,7 +130,6 @@ const Landing = () => {
       </header>
 
       <motion.section
-        className={styles.hero}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
