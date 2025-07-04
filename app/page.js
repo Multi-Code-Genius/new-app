@@ -29,6 +29,8 @@ import download from "../assets/transparentDoenload.svg";
 import dwimg from "../assets/download.svg";
 import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
+import driveIcon from "../assets/googledrive.png";
+import logonew from "../assets/logo3.png";
 
 const features = [
   {
@@ -276,10 +278,8 @@ export default function Home() {
               </span>
               <br />
               bulk ad uploader
-              <span className={styles.inlineIcon}>
-                <img src={star.src} alt="sparkles" width={120} height={120} />
-                for Meta.
-              </span>
+              <img src={star.src} alt="sparkles" width={120} height={120} />
+              for Meta.
             </div>
             <div className={styles.subText}>
               <div className={styles.griditem}>
@@ -434,7 +434,7 @@ export default function Home() {
                 </div>
                 <div></div>
               </div>
-              <div className={styles.card2}>
+              <div className={styles.card4}>
                 <div className={styles.textwrap}>
                   <img
                     src={cardsettings.src}
@@ -455,19 +455,19 @@ export default function Home() {
                 </div>
                 <div className={styles.gridwrap}>
                   <div className={styles.gridcontainer}>
-                    <img src={dwimg.src} alt="rocket" width={20} height={20} />
+                    <div class={styles.stepbadge}>1</div>
                     <div className={styles.point}>
                       Toggle all Meta Creative Enhancements
                     </div>
                   </div>
                   <div className={styles.gridcontainer}>
-                    <img src={copimg.src} alt="rocket" width={20} height={20} />
+                    <div class={styles.stepbadge}>2</div>
                     <div className={styles.point}>
                       Default CTA, Links and UTMs
                     </div>
                   </div>
                   <div className={styles.gridcontainer}>
-                    <img src={image.src} alt="rocket" width={20} height={20} />
+                    <div class={styles.stepbadge}>3</div>
                     <div className={styles.point}>
                       Custom Ad Naming Conventions
                     </div>
@@ -512,61 +512,35 @@ export default function Home() {
                   <div className={styles.addbutton}>+ Add New Template</div>
                 </div>
               </div>
-              <div className={styles.card}>
+              <div className={styles.card3}>
                 <div className={styles.textwrap}>
-                  <img
-                    src={cardrocket.src}
-                    alt="rocket"
-                    width={31}
-                    height={31}
-                  />
-                  <div className={styles.tag}>2 fast 2 furios</div>
+                  <img src={download.src} alt="rocket" width={31} height={31} />
+                  <div className={styles.tag}>Arrival</div>
                 </div>
                 <div className={styles.title2}>
-                  Upload multiple creatives at once
+                  No more upload, download hell.
                 </div>
                 <div className={styles.cardDes}>
-                  Automate your ad creation flow with lightning-fast bulk
-                  uploads, saved settings, and ad previews — all in one clean
-                  dashboard.
+                  No need to spend hours downloading hundreds of ad assets. With
+                  Blip, you can one-click deploy media from your Drive to Meta
+                  Ads Manager.
                 </div>
-                <div className={styles.uploadContainer}>
-                  <div className={styles.contentWrap}>
-                    <div className={styles.uploadHeader}>
-                      <img
-                        src={uprocket.src}
-                        alt="rocket"
-                        width={50}
-                        height={50}
-                      />
-                      <span>
-                        <strong>30 Files uploaded</strong> to a new adset
-                      </span>
-                    </div>
-                    <div className={styles.progressBar}>
-                      <div className={styles.progressBarFill}></div>
-                    </div>
-                  </div>
-
-                  <div className={styles.thumbnailStack}>
+                <div className={styles.uploadContainer1}>
+                  <div className={styles.uploadIconWrap1}>
                     <img
-                      src={thumb1.src}
-                      alt="thumb1"
-                      className={` ${styles.leftcard}`}
-                    />
-                    <img
-                      src={thumb2.src}
-                      alt="thumb2"
-                      className={`${styles.centercard}`}
-                    />
-                    <img
-                      src={thumb3.src}
-                      alt="thumb3"
-                      className={`${styles.rightcard}`}
+                      src={driveIcon.src}
+                      alt="Drive"
+                      width={56}
+                      height={50}
                     />
                   </div>
+                  <div className={styles.contentWrap1}>
+                    <div className={styles.progressBar1}>
+                      <div className={styles.progressBarFill1}></div>
+                    </div>
+                  </div>
+                  <img src={logonew.src} alt="Rocket" width={90} height={90} />
                 </div>
-                <div></div>
               </div>
             </div>
           </div>
