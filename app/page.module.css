@@ -197,7 +197,6 @@
 
 .container {
   max-width: 1300px;
-
   width: 100%;
   gap: 150px;
   display: flex;
@@ -451,6 +450,11 @@
   scroll-margin-top: 120px;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+  }
+}
 .container2 {
   margin-right: 20px;
   position: relative;
@@ -578,13 +582,6 @@
 /* ✅ RESPONSIVE */
 
 @media (max-width: 768px) {
-
-  .container {
-
-    gap: 50px;
-
-  }
-
   .container2 {
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -851,6 +848,12 @@
   display: flex;
   gap: 20px;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    padding: 0 10px;
+  }
 }
 
 .card {
@@ -1368,10 +1371,12 @@
 
   .title2 {
     font-size: 24px;
+    padding-top: 11px;
   }
 
   .cardDes {
     font-size: 16px;
+    padding-top: 8px;
   }
 
   .imageWrapper1 {
@@ -1384,14 +1389,17 @@
 
   .card2 {
     height: 434px;
+    padding: 20px;
   }
 
   .card3 {
     height: 434px;
+    padding: 20px;
   }
 
   .card4 {
     height: 434px;
+    padding: 20px;
   }
 
   .heroText {
