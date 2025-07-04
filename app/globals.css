@@ -62,15 +62,16 @@ html {
 }
 
 body {
+
   /* Improve rendering performance */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-  
+
   /* Prevent layout shifts */
   margin: 0;
   padding: 0;
-  
+
   /* Optimize for animations */
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -85,6 +86,7 @@ body {
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
