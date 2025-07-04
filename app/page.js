@@ -31,7 +31,6 @@ import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
-import rocket1 from "../assets/uprocket.png";
 
 const features = [
   {
@@ -72,17 +71,22 @@ export default function Home() {
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
 
+  const landingRef = useRef();
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const scrollHandler = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", scrollHandler, { passive: true });
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [isScrolled]);
+    console.log("object", landingRef.current);
+    const scrollHandler = () => {
+      if (landingRef.current) {
+        setIsScrolled(landingRef.current.scrollTop > 10);
+      }
+    };
 
-  useEffect(() => {
-    console.log("isScrolled changed:", isScrolled);
-  }, [isScrolled]);
+    landingRef.current?.addEventListener("scroll", scrollHandler);
+    return () =>
+      landingRef.current?.removeEventListener("scroll", scrollHandler);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -90,16 +94,6 @@ export default function Home() {
       history.scrollRestoration = "manual";
     }
   }, []);
-
-  useEffect(() => {
-    console.log("window.scrollY");
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [window.scrollY]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -128,7 +122,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <div className={styles.landing}>
+      <div className={styles.landing} ref={landingRef}>
         <div className={styles.logoWrapper}>
           <img src={logo.src} alt="logo" width={48} height={48} />
           <span className={styles.brandText}>Blip</span>
