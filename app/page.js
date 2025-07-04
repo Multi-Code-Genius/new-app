@@ -68,7 +68,6 @@ const features = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const mobileMenuRef = useRef(null);
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
@@ -76,20 +75,15 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(true);
-      window.removeEventListener("scroll", onScroll); // ✅ remove once triggered
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll); // clean up
-  }, []);
+    const scrollHandler = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [isScrolled]);
 
   useEffect(() => {
     console.log("isScrolled changed:", isScrolled);
   }, [isScrolled]);
 
-  console.log("srolled>>>>", isScrolled);
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
@@ -431,19 +425,19 @@ export default function Home() {
               </div>
               <div className={styles.gridwrap1}>
                 <div className={styles.gridcontainer}>
-                  <div class={styles.stepbadge}>1</div>
+                  <div className={styles.stepbadge}>1</div>
                   <div className={styles.point}>
                     Toggle all Meta Creative Enhancements
                   </div>
                 </div>
                 <div className={styles.gridcontainer}>
-                  <div class={styles.stepbadge}>2</div>
+                  <div className={styles.stepbadge}>2</div>
                   <div className={styles.point}>
                     Default CTA, Links and UTMs
                   </div>
                 </div>
                 <div className={styles.gridcontainer}>
-                  <div class={styles.stepbadge}>3</div>
+                  <div className={styles.stepbadge}>3</div>
                   <div className={styles.point}>
                     Custom Ad Naming Conventions
                   </div>
