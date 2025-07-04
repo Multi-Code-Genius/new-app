@@ -332,6 +332,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 0 20px;
   flex-direction: column;
 }
 
@@ -407,6 +408,7 @@
 }
 
 .container2 {
+  margin-right: 20px;
   position: relative;
   max-width: 1150px;
   width: 100%;
@@ -525,13 +527,45 @@
   justify-content: center;
 }
 
+
+.groupText {
+  width: 90%;
+}
+
 /* ✅ RESPONSIVE */
 
 @media (max-width: 768px) {
   .container2 {
     flex-direction: column;
     padding: 2rem 1.5rem;
+
     gap: 2rem;
+  }
+
+  .head {
+    font-size: 16px;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    flex-direction: row;
+
+  }
+
+  .title1 {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 15px;
+
+  }
+
+  .subtitle1 {
+    text-align: left;
+    padding-left: 15px;
+    font-size: 16px;
+  }
+
+  .shadowButton {
+    width: 90%;
   }
 
   .left,
@@ -554,39 +588,39 @@
   .teamComing {
     font-size: 22px;
   }
+
+
+
 }
 
-.wrapperIcon {
-  position: relative;
-  width: 100%;
-  max-width: 794px;
-  margin: 0 auto;
-  background: #fffbf3;
-  padding: 40px;
-  text-align: center;
-}
 
 .badgeTitle {
   display: inline-block;
   padding: 10px 40px;
   border: 2px solid #0f9182;
   border-radius: 100px;
-  font-family: "Inter", "Quicksand", sans-serif;
-  font-weight: 950;
+  font-family: var(--font-nexa-round), sans-serif;
+  font-weight: 900;
   font-size: 24px;
   color: #0f9182;
   opacity: 0.7;
   margin-bottom: 1rem;
+
+  text-align: left;
+
+
 }
 
 .title {
-  font-family: "Inter", "Quicksand", sans-serif;
-  font-weight: 950;
+  font-family: var(--font-nexa-round), sans-serif;
+  font-weight: 900;
   font-size: 32px;
   color: #0f9182;
   line-height: 120%;
   margin: 20px 0;
-  letter-spacing: -0.02em;
+  text-align: center;
+  line-height: 120%;
+
 }
 
 .price1 {
@@ -599,8 +633,10 @@
 }
 
 .subtitle {
-  font-family: "Inter", "Quicksand", sans-serif;
-  font-weight: 700;
+
+  text-align: center;
+  font-family: var(--font-nexa-round), sans-serif;
+  font-weight: 500;
   font-size: 18px;
   color: #0f9182;
   opacity: 0.6;
@@ -617,7 +653,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 60px;
   max-width: 800px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 20px;
 }
 
@@ -629,7 +665,10 @@
   background: rgba(255, 255, 255, 0.4);
   border-radius: 12px;
   transform: rotate(-0.38deg);
-  min-width: 200px;
+  min-width: 250px;
+
+
+  /* tweak as needed */
 }
 
 .iconBox {
@@ -689,43 +728,92 @@
 }
 
 .featureText {
-  font-family: "Inter", "Quicksand", sans-serif;
-  font-weight: 700;
+  font-family: var(--font-nexa-round), sans-serif;
+  font-weight: 500;
   font-size: 18px;
   color: #161616;
+  text-align: left;
   line-height: 130%;
   letter-spacing: -0.02em;
+
+
+
 }
 
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 60px;
+  max-width: 800px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.wrapperIcon {
+  position: relative;
+  width: 100%;
+  max-width: 794px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  /* Default: center */
+}
+
+
+
 @media (max-width: 768px) {
-  .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 10px;
+  .wrapperIcon {
+    text-align: left;
+    padding: 32px 20px;
   }
 
-  .featureItem {
-    min-width: auto;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
+  .badgeTitle,
+
+  .subtitle {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 18px;
   }
 
-  .builtTitle {
+  .title {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 24px;
   }
 
-  .builtSubtitle {
-    font-size: 16px;
+  .subtitle {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 18px;
   }
 
-  .badge2 {
-    font-size: 16px;
-    padding: 8px 30px;
+
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0;
+    justify-items: start;
+    text-align: left;
+
+  }
+
+  .featureItem {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .featureText {
+    text-align: left;
   }
 }
 
-/* Feature Boxes Grid Layout - matching existing pattern */
+
+
+
 .grid {
   gap: 30px;
   max-width: 1200px;
@@ -752,6 +840,7 @@
   position: relative;
   z-index: 1;
 }
+
 .stepbadge {
   width: 30px;
   height: 30px;
@@ -765,6 +854,7 @@
   color: #d4145a;
   background-color: white;
 }
+
 .card2 {
   width: 100%;
   height: 578px;
@@ -777,6 +867,7 @@
   position: relative;
   z-index: 1;
 }
+
 .card3 {
   width: 100%;
   height: 457px;
@@ -789,6 +880,7 @@
   position: relative;
   z-index: 1;
 }
+
 .card::after {
   content: "";
   position: absolute;
@@ -802,6 +894,7 @@
   z-index: -1;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .card4 {
   width: 100%;
   height: 608px;
@@ -814,6 +907,7 @@
   position: relative;
   z-index: 1;
 }
+
 .card4::after {
   content: "";
   position: absolute;
@@ -827,6 +921,7 @@
   z-index: -1;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .card2::after {
   content: "";
   position: absolute;
@@ -854,17 +949,20 @@
   z-index: -1;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .tag {
   opacity: 0.5;
   font-size: 24px;
   font-weight: 900;
   color: #573b03;
 }
+
 .textwrap {
   display: flex;
   flex-direction: "row";
   gap: 5px;
 }
+
 .title2 {
   font-size: 32px;
   font-weight: 900;
@@ -892,12 +990,14 @@
   flex-direction: column;
   /* width: 60%; */
 }
+
 .gridwrap {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 21px;
 }
+
 .uploadContainer {
   margin-top: 20px;
   background: white;
@@ -909,6 +1009,7 @@
   gap: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+
 .gridcontainer {
   display: flex;
   background: white;
@@ -919,6 +1020,7 @@
   gap: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+
 .addbutton {
   padding: 19.6px 159.4px 19.6px 174.4px;
   opacity: 0.9;
@@ -929,12 +1031,14 @@
   font-weight: bold;
   border-radius: 34px;
 }
+
 .point {
   font-size: 16px;
   font-weight: bold;
   color: #000;
   width: 100%;
 }
+
 .uploadHeader {
   display: flex;
   align-items: center;
@@ -954,7 +1058,8 @@
 }
 
 .progressBarFill {
-  width: 50%; /* adjust based on progress */
+  width: 50%;
+  /* adjust based on progress */
   height: 100%;
   background: #f3705a;
   transition: width 0.3s ease;
@@ -1043,12 +1148,14 @@
 }
 
 .progressBarFill1 {
-  width: 60%; /* dynamic width */
+  width: 60%;
+  /* dynamic width */
   height: 100%;
   background: #f73cb2;
   border-radius: 999px;
   transition: width 0.4s ease-in-out;
 }
+
 /* Icon container */
 .feature-icon {
   width: 48px;

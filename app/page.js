@@ -342,13 +342,15 @@ export default function Home() {
               <img src={rose.src} width={24} height={24} alt="rose" />
               Escape from Button Clicking Hell
             </div>
-            <div className={styles.title1}>
-              The fastest way to manage multiple ad accounts
-            </div>
-            <div className={styles.subtitle1}>
-              End context-switching whiplash. No more selecting the same
-              settings over and over, copy-pasting text dozens of times, or
-              sluggish UI.
+            <div className={styles.groupText}>
+              <div className={styles.title1}>
+                The fastest way to manage multiple ad accounts
+              </div>
+              <div className={styles.subtitle1}>
+                End context-switching whiplash. No more selecting the same
+                settings over and over, copy-pasting text dozens of times, or
+                sluggish UI.
+              </div>
             </div>
             <div className={styles.buttonGroup}>
               <div className={styles.shadowButton}>
