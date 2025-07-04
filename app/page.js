@@ -261,18 +261,7 @@ export default function Home() {
       </header>
 
       <div className={styles.container}>
-        {/* text content */}
-        {/* <motion.section
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3, margin: "-100px" }}
-          transition={{
-            duration: shouldReduceMotion ? 0 : 0.6,
-            ease: "easeOut",
-            opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
-          }}
-        > */}
-        <div className={styles.textcontainer}>
+        <section className={styles.textcontainer}>
           <div className={styles.heroText}>
             The simplest,
             <span className={styles.inlineIcon}>
@@ -305,7 +294,9 @@ export default function Home() {
             <div className={styles.button}>Get Started</div>
             <div className={styles.button1}>View Demo</div>
           </div>
-        </div>
+
+          {/* </motion.section> */}
+        </section>
         <div className={styles.textcontainer2}>
           <div className={styles.heroText}>
             The simplest,
@@ -351,7 +342,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* </motion.section> */}
 
         <div className={styles.imageWrapper1}>
           <img
@@ -373,8 +363,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* About section */}
-        {/* <motion.section
+        <motion.section
           id="about"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -384,8 +373,8 @@ export default function Home() {
             ease: "easeOut",
             opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
           }}
-        > */}
-        <div className={styles.content}>
+          className={styles.content}
+        >
           <div className={styles.head}>
             <img src={rose.src} width={24} height={24} alt="rose" />
             Escape from Button Clicking Hell
@@ -414,10 +403,7 @@ export default function Home() {
               <span>Fast launch all creatives</span>
             </div>
           </div>
-
-          {/* box section */}
-        </div>
-        {/* </motion.section> */}
+        </motion.section>
 
         <div className={styles.mainGrid}>
           <div className={styles.grid}>
@@ -571,7 +557,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <motion.section
+        <motion.section
+          className={styles.wrapperIcon}
           id="features"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -581,8 +568,7 @@ export default function Home() {
             ease: "easeOut",
             opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
           }}
-        > */}
-        <div className={styles.wrapperIcon}>
+        >
           <div className={styles.badgeTitle}>Built by the best</div>
           <h2 className={styles.title}>
             Blip has been built by people with over
@@ -604,12 +590,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-        {/* </motion.section> */}
+        </motion.section>
 
-        {/* price section */}
-
-        {/* <motion.section
+        <motion.section
           id="pricing"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -619,8 +602,8 @@ export default function Home() {
             ease: "easeOut",
             opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
           }}
-        > */}
-        <div className={styles.wrapper}>
+          className={styles.wrapper}
+        >
           <div className={styles.container2}>
             <div className={styles.left}>
               <div className={styles.badge}>
@@ -647,8 +630,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
-        {/* </motion.section> */}
+        </motion.section>
       </div>
     </div>
   );

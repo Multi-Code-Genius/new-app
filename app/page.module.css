@@ -1,7 +1,8 @@
 .landing {
   font-family: var(--font-nexa-round), Arial, sans-serif;
   display: flex;
-
+  position: relative;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   color: #5a1a01;
@@ -9,7 +10,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+
 }
 
 .header {
@@ -45,7 +49,9 @@
 
 .navLinks {
   z-index: 1001;
-  position: relative;
+  position: fixed;
+  top: 30px;
+  right: 50px;
   width: 438px;
   height: 75px;
   background: #2a2a2a;
@@ -193,6 +199,7 @@
   width: 100%;
   gap: 150px;
   display: flex;
+  padding: 10px;
   flex-direction: column;
 }
 
@@ -225,6 +232,7 @@
   gap: 8px;
   vertical-align: baseline;
 }
+
 .inlineIcon img {
   width: 120px;
   height: 120px;
@@ -314,6 +322,7 @@
   width: 100%;
   max-width: 1200px;
 }
+
 .image {
   opacity: 0.4;
   width: 100%;
@@ -352,6 +361,8 @@
   margin: 0 auto;
   padding: 0 20px;
   flex-direction: column;
+  scroll-margin-top: 120px;
+
 }
 
 .head {
@@ -423,6 +434,8 @@
   justify-content: center;
   padding: 2rem 1rem;
   background-color: #fffbf3;
+  scroll-margin-top: 120px;
+
 }
 
 .container2 {
@@ -589,7 +602,7 @@
   }
 
   .price {
-    font-size: 36px;
+    font-size: 24px;
   }
 
   .feature {
@@ -759,7 +772,8 @@
   margin: 0 auto;
   padding: 40px;
   text-align: center;
-  /* Default: center */
+  scroll-margin-top: 120px;
+
 }
 
 @media (max-width: 768px) {
@@ -1303,9 +1317,11 @@
   .uploadContainer1 {
     display: none;
   }
+
   .gridwrap {
     display: none;
   }
+
   .feature-box {
     padding: 30px 20px;
     min-height: 350px;
@@ -1314,9 +1330,11 @@
   .tag {
     font-size: 18px;
   }
+
   .title2 {
     font-size: 24px;
   }
+
   .cardDes {
     font-size: 16px;
   }
@@ -1324,18 +1342,23 @@
   .imageWrapper1 {
     display: none;
   }
+
   .card {
     padding: 21px;
   }
+
   .card2 {
     height: 434px;
   }
+
   .card3 {
     height: 434px;
   }
+
   .card4 {
     height: 434px;
   }
+
   .heroText {
     font-size: 32px;
     line-height: 1;
@@ -1345,24 +1368,31 @@
     width: 100%;
     margin: 0 auto;
   }
+
   .textcontainer {
     display: none;
   }
+
   .griditem {
     width: 100%;
   }
+
   .griditem img {
     height: 20px;
   }
+
   .buttoncontainer {
     flex-direction: column;
   }
+
   .subText {
     flex-direction: column;
   }
+
   .textcontainer2 {
     display: flex;
   }
+
   .heroText img {
     width: 50px;
     height: 50px;
@@ -1371,10 +1401,12 @@
   .inlineIcon {
     display: contents;
   }
+
   .inlineIcon img {
     width: 70px;
     height: 70px;
   }
+
   .feature-title {
     font-size: 24px;
   }
