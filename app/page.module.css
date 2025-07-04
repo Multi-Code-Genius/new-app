@@ -194,7 +194,6 @@
   gap: 150px;
   display: flex;
   flex-direction: column;
-  margin-top: 105px;
 }
 
 .cta {
@@ -1320,9 +1319,6 @@
   }
   .cardDes {
     font-size: 16px;
-  }
-  .container {
-    margin-top: 0;
   }
 
   .imageWrapper1 {
