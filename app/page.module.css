@@ -1327,6 +1327,9 @@
   .gridwrap {
     display: none;
   }
+  .gridwrap1 {
+    display: none;
+  }
 
   .feature-box {
     padding: 30px 20px;

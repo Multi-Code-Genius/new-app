@@ -76,13 +76,13 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const shouldBeScrolled = window.scrollY > 10;
-      setIsScrolled(shouldBeScrolled);
+    const onScroll = () => {
+      setIsScrolled(true);
+      window.removeEventListener("scroll", onScroll); // ✅ remove once triggered
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll); // clean up
   }, []);
 
   useEffect(() => {
