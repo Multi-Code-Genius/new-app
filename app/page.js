@@ -86,12 +86,17 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -106,50 +111,28 @@ export default function Home() {
         setMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
   const scrollToSection = useCallback(
     (e, sectionId) => {
       e.preventDefault();
       const section = document.getElementById(sectionId);
+      const header = document.querySelector(`.${styles.header}`);
+      const headerHeight = header?.offsetHeight || 100;
+
       if (section) {
-        isScrolling.current = true;
-        const navbarHeight = 105;
-        const sectionPosition = section.getBoundingClientRect().top;
-        const offsetPosition =
-          sectionPosition + window.pageYOffset - navbarHeight;
+        const targetPosition =
+          section.getBoundingClientRect().top +
+          window.pageYOffset -
+          headerHeight;
 
-        const startTime = performance.now();
-        const startPosition = window.pageYOffset;
-        const distance = offsetPosition - startPosition;
-        const duration = Math.min(Math.abs(distance) * 0.5, 800);
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
 
-        function easeInOutCubic(t) {
-          return t < 0.5
-            ? 4 * t * t * t
-            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-        }
-
-        function animateScroll(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const ease = easeInOutCubic(progress);
-
-          window.scrollTo(0, startPosition + distance * ease);
-
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          } else {
-            isScrolling.current = false;
-          }
-        }
-
-        requestAnimationFrame(animateScroll);
         if (menuOpen) setMenuOpen(false);
       }
     },
@@ -165,7 +148,6 @@ export default function Home() {
           <img src={logo.src} alt="logo" width={48} height={48} />
           <span className={styles.brandText}>Blip</span>
         </div>
-
         <button
           ref={menuBtnRef}
           className={styles.menuBtn}
@@ -173,7 +155,6 @@ export default function Home() {
         >
           Menu
         </button>
-
         <div
           ref={mobileMenuRef}
           className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
@@ -194,10 +175,7 @@ export default function Home() {
             Start Now
           </button>
         </div>
-
-        <nav
-          className={`${styles.navLinks} ${isScrolled ? styles.scrolled : ""}`}
-        >
+        <nav className={styles.navLinks}>
           <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
             about
           </a>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&display=swap");
+
 .landing {
   font-family: var(--font-nexa-round), Arial, sans-serif;
   display: flex;
@@ -195,6 +197,7 @@
 
 .container {
   max-width: 1300px;
+
   width: 100%;
   gap: 150px;
   display: flex;
@@ -575,6 +578,13 @@
 /* ✅ RESPONSIVE */
 
 @media (max-width: 768px) {
+
+  .container {
+
+    gap: 50px;
+
+  }
+
   .container2 {
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -1007,12 +1017,14 @@
   gap: 12px;
   max-width: 75%;
 }
+
 .gridwrap {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 21px;
 }
+
 .gridwrap1 {
   display: flex;
   flex-direction: column;
@@ -1052,6 +1064,7 @@
   font-weight: bold;
   border-radius: 34px;
 }
+
 .addbutton1 {
   padding: 19.6px 159.4px 19.6px 174.4px;
   opacity: 0.9;
@@ -1083,6 +1096,7 @@
   font-weight: 700;
   margin-right: 4px;
 }
+
 .progressBar {
   height: 40px;
   width: 100%;
@@ -1108,6 +1122,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .leftcard,
 .centercard,
 .rightcard {
