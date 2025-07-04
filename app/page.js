@@ -66,60 +66,30 @@ const features = [
   },
 ];
 
-const features2 = [
-  {
-    tag: "🚀 2 fast 2 furious",
-    title: "Upload multiple creatives at once",
-    description:
-      "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    highlights: ["30 files uploaded to a new client"],
-    footer: "📸",
-    type: "red",
-  },
-  {
-    tag: "💾 Saving private templates",
-    title: "Apply saved templates for copy, CTA, and links",
-    description:
-      "Stop wasting time in Meta Ads Manager’s clunky interface. Simply select your ideal settings once. We take care of the rest.",
-    highlights: [
-      "Import recently used copy from Meta",
-      "Save Variations of Primary Text and Headlines",
-      "Making ads using new template",
-    ],
-    button: "+ Add New Template",
-    type: "blue",
-  },
-  {
-    tag: "🛠️ Every setting everywhere at once",
-    title: "Persistent Settings Per Ad Account",
-    description:
-      "UTMs, page selections, ad name formulas, all saved, per ad account, so nothing resets on reload.",
-    highlights: [
-      "Toggle all Meta Creative Enhancements",
-      "Default CTAs, Links and UTMs",
-      "Custom Ad Naming Conventions",
-    ],
-    button: "Save Settings",
-    type: "green",
-  },
-  {
-    tag: "📁 Arrival",
-    title: "No more upload, download hell.",
-    description:
-      "No need to spend hours downloading hundreds of assets. With Blip, you can one-click deploy media from your Drive to Meta Ads Manager.",
-    highlights: ["🚀", "🧠"],
-    type: "orange",
-  },
-];
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+
   const mobileMenuRef = useRef(null);
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
   const isScrolling = useRef(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldBeScrolled = window.scrollY > 10;
+      setIsScrolled(shouldBeScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    console.log("isScrolled changed:", isScrolled);
+  }, [isScrolled]);
+
+  console.log("srolled>>>>", isScrolled);
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
@@ -128,19 +98,6 @@ export default function Home() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!isScrolling.current) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 0);
-        });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
