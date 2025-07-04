@@ -31,6 +31,7 @@ import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
+import rocket1 from "../assets/uprocket.png";
 
 const features = [
   {
@@ -273,12 +274,14 @@ export default function Home() {
             <div className={styles.heroText}>
               The simplest,
               <span className={styles.inlineIcon}>
-                <img src={roket.src} alt="rocket" width={120} height={120} />
+                <img src={rocket1.src} alt="rocket" />
                 quickest
               </span>
               <br />
               bulk ad uploader
-              <img src={star.src} alt="sparkles" width={120} height={120} />
+              <span className={styles.inlineIcon}>
+                <img src={star.src} alt="sparkles" />
+              </span>
               for Meta.
             </div>
             <div className={styles.subText}>
@@ -303,9 +306,54 @@ export default function Home() {
               <div className={styles.button1}>View Demo</div>
             </div>
           </div>
+          <div className={styles.textcontainer2}>
+            <div className={styles.heroText}>
+              The simplest,
+              <span className={styles.inlineIcon}>
+                <img src={roket.src} alt="rocket" />
+                <br />
+                quickest
+              </span>
+              bulk ad <br /> uploader
+              <span className={styles.inlineIcon}>
+                <img src={star.src} alt="sparkles" />
+              </span>
+              for Meta.
+            </div>
+            <div className={styles.imageWrapper}>
+              <img
+                alt="video"
+                src={video.src}
+                width={1200}
+                height={900}
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.buttoncontainer}>
+              <div className={styles.button}>Get Started</div>
+              <div className={styles.button1}>View Demo</div>
+            </div>
+            <div className={styles.subText}>
+              <div className={styles.griditem}>
+                <img src={right.src} alt="right" width={21} height={21} />
+                <div className={styles.text}> Launch 100s of ads together</div>
+              </div>
+              <div className={styles.griditem}>
+                <img src={right.src} alt="right" width={21} height={21} />
+                <div className={styles.text}> Unlimited Ad Accounts</div>
+              </div>
+              <div className={styles.griditem}>
+                <img src={right.src} alt="right" width={21} height={21} />
+                <div className={styles.text}>
+                  {" "}
+                  Save your settings and launch an ad in seconds
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.section>
 
-        <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapper1}>
           <img
             alt="video"
             src={video.src}
