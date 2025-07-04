@@ -258,36 +258,29 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* screensot */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapper}>
+          <img
+            alt="video"
+            src={video.src}
+            width={1200}
+            height={900}
+            className={styles.image}
+          />
+          <button className={styles.overlayButton}>
             <img
-              alt="video"
-              src={video.src}
-              width={1200}
-              height={900}
-              className={styles.image}
+              src={plus.src}
+              alt="icon"
+              className={styles.icon}
+              width={50}
+              height={50}
             />
-            <button className={styles.overlayButton}>
-              <img
-                src={plus.src}
-                alt="icon"
-                className={styles.icon}
-                width={50}
-                height={50}
-              />
-              Watch Demo Video
-            </button>
-          </div>
-        </motion.section>
+            Watch Demo Video
+          </button>
+        </div>
 
-        {/* xytz */}
+        {/* About section */}
         <motion.section
+          id="about"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -325,39 +318,32 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* box section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className={styles.grid}>
-            {features2.map((feature, i) => (
-              <div key={i} className={`${styles.card} ${styles[feature.type]}`}>
-                <div className={styles.tag}>{feature.tag}</div>
-                <h3 className={styles.title2}>{feature.title}</h3>
-                <p className={styles.description}>{feature.description}</p>
-                <ul className={styles.highlightList}>
-                  {feature.highlights.map((item, idx) => (
-                    <li key={idx} className={styles.highlight}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                {feature.button && (
-                  <button className={styles.button}>{feature.button}</button>
-                )}
-                {feature.footer && (
-                  <div className={styles.footerIcon}>{feature.footer}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </motion.section>
+        <div className={styles.grid}>
+          {features2.map((feature, i) => (
+            <div key={i} className={`${styles.card} ${styles[feature.type]}`}>
+              <div className={styles.tag}>{feature.tag}</div>
+              <h3 className={styles.title2}>{feature.title}</h3>
+              <p className={styles.description}>{feature.description}</p>
+              <ul className={styles.highlightList}>
+                {feature.highlights.map((item, idx) => (
+                  <li key={idx} className={styles.highlight}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              {feature.button && (
+                <button className={styles.button}>{feature.button}</button>
+              )}
+              {feature.footer && (
+                <div className={styles.footerIcon}>{feature.footer}</div>
+              )}
+            </div>
+          ))}
+        </div>
 
         {/* feature Section */}
         <motion.section
+          id="features"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -391,6 +377,7 @@ export default function Home() {
         {/* price section */}
 
         <motion.section
+          id="pricing"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

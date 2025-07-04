@@ -2,11 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Using local NexaRound_Trial fonts configured in layout.js */
 
 .landing {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nexa-round);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +60,7 @@ html {
   }
 
   .brandText {
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--font-nexa-round);
     font-weight: 800;
     font-size: 48px;
     line-height: 1;
@@ -226,7 +225,7 @@ html {
       font-weight: 900;
       margin-bottom: 2rem;
       letter-spacing: -0.02em;
-      font-family: 'Nunito';
+      font-family: var(--font-nexa-round);
     }
 
     .featuresList {
@@ -440,7 +439,7 @@ html {
       font-size: 32px;
       color: #7F0F91;
       margin-bottom: 0.5rem;
-      font-family: 'Nunito', sans-serif;
+      font-family: var(--font-nexa-round);
       letter-spacing: -0.05rem;
       font-weight: 700;
     }

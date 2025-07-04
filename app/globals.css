@@ -1,0 +1,50 @@
+/* NexaRound font utility classes */
+.font-nexa-round {
+  font-family: var(--font-nexa-round);
+}
+
+/* NexaRound font weight variations */
+.font-nexa-thin {
+  font-family: var(--font-nexa-round);
+  font-weight: 100;
+}
+
+.font-nexa-light {
+  font-family: var(--font-nexa-round);
+  font-weight: 300;
+}
+
+.font-nexa-book {
+  font-family: var(--font-nexa-round);
+  font-weight: 350;
+}
+
+.font-nexa-regular {
+  font-family: var(--font-nexa-round);
+  font-weight: 400;
+}
+
+.font-nexa-glow {
+  font-family: var(--font-nexa-round);
+  font-weight: 600;
+}
+
+.font-nexa-bold {
+  font-family: var(--font-nexa-round);
+  font-weight: 700;
+}
+
+.font-nexa-extrabold {
+  font-family: var(--font-nexa-round);
+  font-weight: 800;
+}
+
+.font-nexa-heavy {
+  font-family: var(--font-nexa-round);
+  font-weight: 900;
+}
+
+.font-nexa-ultra {
+  font-family: var(--font-nexa-round);
+  font-weight: 950;
+}

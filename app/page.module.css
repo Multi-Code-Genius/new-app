@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* Using local NexaRound_Trial fonts configured in layout.js */
+
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&display=swap");
+
+
 
 html {
   scroll-behavior: smooth;
@@ -9,7 +12,7 @@ html {
   align-items: center;
   justify-items: center;
   width: 100%;
-  font-family: "Nunito";
+  font-family: var(--font-nexa-round), sans-serif;
   background-color: #fffbf3;
 }
 
@@ -41,7 +44,7 @@ html {
   letter-spacing: -4px;
   padding-top: 120px;
   color: #2c0b00;
-  font-family: "Nunito";
+  font-family: var(--font-nexa-round), sans-serif;
   flex-direction: column;
   padding: 20px 0;
 }
@@ -255,7 +258,7 @@ html {
 }
 
 .badge {
-  font-family: "Geist", sans-serif;
+
   font-size: 14px;
   padding: 6px 20px;
   border: 1px solid white;
@@ -265,14 +268,14 @@ html {
 }
 
 .title2 {
-  font-family: "Nexa Round Trial", sans-serif;
+  font-family: var(--font-nexa-round), sans-serif;
   font-size: 32px;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
 
 .description {
-  font-family: "Geist", sans-serif;
+
   font-size: 14px;
   line-height: 1.6;
   color: #fff8e9;
@@ -284,7 +287,7 @@ html {
 .cta {
   background: #fff;
   color: #768fc0;
-  font-family: "Geist", sans-serif;
+
   font-weight: 700;
   padding: 10px 27px;
   border-radius: 20px;
@@ -295,7 +298,7 @@ html {
 }
 
 .teamNote {
-  font-family: "Nexa Round Trial", sans-serif;
+  font-family: var(--font-nexa-round), sans-serif;
   font-size: 18px;
   opacity: 0.6;
   line-height: 160%;
@@ -303,7 +306,7 @@ html {
 }
 
 .teamComing {
-  font-family: "Nexa Round Trial", sans-serif;
+  font-family: var(--font-nexa-round), sans-serif;
   font-size: 32px;
   font-weight: 950;
   line-height: 120%;
@@ -621,7 +624,7 @@ html {
 }
 
 .feature-title {
-  font-family: "Nexa Round_Trial", Arial, sans-serif;
+  font-family: var(--font-nexa-round), Arial, sans-serif;
   font-style: normal;
   font-weight: 950;
   font-size: 28px;
@@ -633,7 +636,7 @@ html {
 
 /* Feature description */
 .feature-description {
-  font-family: "Nexa Round_Trial", Arial, sans-serif;
+  font-family: var(--font-nexa-round), Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -662,7 +665,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Nexa Round_Trial", Arial, sans-serif;
+  font-family: var(--font-nexa-round), Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #573b03;
@@ -675,7 +678,7 @@ html {
   border: none;
   border-radius: 100px;
   padding: 12px 24px;
-  font-family: "Nexa Round_Trial", Arial, sans-serif;
+  font-family: var(--font-nexa-round), Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -698,7 +701,7 @@ html {
   align-items: center;
   gap: 12px;
   padding: 8px 0;
-  font-family: "Nexa Round_Trial", Arial, sans-serif;
+  font-family: var(--font-nexa-round), Arial, sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: #573b03;
@@ -845,7 +848,7 @@ html {
 
 
 .landing {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nexa-round), sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -899,7 +902,7 @@ body {
 }
 
 .brandText {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nexa-round), sans-serif;
   font-weight: 800;
   font-size: 48px;
   line-height: 1;
@@ -931,23 +934,26 @@ body {
 }
 
 .navLinks a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+  color: #FFF;
+  font-family: "Cal Sans", sans-serif;
   font-size: 18px;
-  letter-spacing: -0.04em;
+  text-decoration: none;
+  font-style: normal;
+  line-height: normal;
+
+
 }
 
 .navLinks .startBtn {
   padding: 0.5rem 1rem;
   border-radius: 999px;
   background: #fff;
+  font-family: "Cal Sans", sans-serif;
   color: #000;
   border: none;
   cursor: pointer;
-  font-weight: 600;
   font-size: 18px;
-  letter-spacing: -0.04em;
+
 }
 
 .menuBtn {
@@ -958,11 +964,12 @@ body {
   padding: 0.7rem 1.5rem;
   border-radius: 999px;
   font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
   display: none;
   cursor: pointer;
   z-index: 1000;
+  font-family: "Cal Sans", sans-serif;
+
+
 }
 
 .mobileMenu {
@@ -998,12 +1005,11 @@ body {
 .mobileMenu a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
   font-size: 24px;
-  letter-spacing: -0.04em;
   text-align: left;
   width: 100%;
   padding: 5px 0;
+  font-family: "Cal Sans", sans-serif;
 }
 
 .mobileMenu .startBtn {
@@ -1012,12 +1018,11 @@ body {
   color: #000;
   border: none;
   border-radius: 999px;
-  font-weight: 600;
   font-size: 18px;
-  letter-spacing: -0.04em;
   width: auto;
   margin-top: 20px;
   cursor: pointer;
+  font-family: "Cal Sans", sans-serif;
 }
 
 /* Responsive Media Queries */
