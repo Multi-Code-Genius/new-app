@@ -13,7 +13,6 @@
   overflow: auto;
   overflow-x: hidden;
   scroll-behavior: auto;
-
 }
 
 .header {
@@ -234,8 +233,8 @@
 }
 
 .inlineIcon img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .subText {
@@ -362,7 +361,6 @@
   padding: 0 20px;
   flex-direction: column;
   scroll-margin-top: 120px;
-
 }
 
 .head {
@@ -435,7 +433,6 @@
   padding: 2rem 1rem;
   background-color: #fffbf3;
   scroll-margin-top: 120px;
-
 }
 
 .container2 {
@@ -773,7 +770,6 @@
   padding: 40px;
   text-align: center;
   scroll-margin-top: 120px;
-
 }
 
 @media (max-width: 768px) {
@@ -1014,7 +1010,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  /* gap: 20px; */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -1054,7 +1050,6 @@
   width: 100%;
   font-size: 16px;
   color: #573b03;
-  flex: 1;
   font-weight: 600;
 }
 

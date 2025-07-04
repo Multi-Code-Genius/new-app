@@ -265,12 +265,14 @@ export default function Home() {
           <div className={styles.heroText}>
             The simplest,
             <span className={styles.inlineIcon}>
-              <img src={roket.src} alt="rocket" width={120} height={120} />
+              <img src={roket.src} alt="rocket" />
               quickest
             </span>
             <br />
             bulk ad uploader
-            <img src={star.src} alt="sparkles" width={120} height={120} />
+            <span className={styles.inlineIcon}>
+              <img src={star.src} alt="sparkles" />
+            </span>
             for Meta.
           </div>
           <div className={styles.subText}>
@@ -439,17 +441,17 @@ export default function Home() {
 
                 <div className={styles.thumbnailStack}>
                   <img
-                    src={thumb1.src}
+                    src={thumb2.src}
                     alt="thumb1"
                     className={` ${styles.leftcard}`}
                   />
                   <img
-                    src={thumb2.src}
+                    src={thumb3.src}
                     alt="thumb2"
                     className={`${styles.centercard}`}
                   />
                   <img
-                    src={thumb3.src}
+                    src={thumb1.src}
                     alt="thumb3"
                     className={`${styles.rightcard}`}
                   />
