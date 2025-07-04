@@ -12,13 +12,23 @@ import rose from "../assets/rose.svg";
 import swap from "../assets/Frame.svg";
 import settings from "../assets/setting.svg";
 import rocket from "../assets/rocket.svg";
-
 import iconPink from "../assets/iconPink.svg";
 import iconPurple from "../assets/iconPurple.svg";
 import iconOrange from "../assets/iconOrange.svg";
 import iconBlue from "../assets/iconBlue.svg";
 import iconGreen from "../assets/iconGreen.svg";
 import iconRed from "../assets/iconRed.svg";
+import cardrocket from "../assets/cardrocket.png";
+import uprocket from "../assets/uploadrocket2.png";
+import thumb1 from "../assets/thumb1.png";
+import thumb2 from "../assets/thumb2.png";
+import thumb3 from "../assets/thumb3.png";
+import copy from "../assets/transparentCopy.svg";
+import cardsettings from "../assets/transparentSetting.svg";
+import download from "../assets/transparentDoenload.svg";
+import dwimg from "../assets/download.svg";
+import copimg from "../assets/copy.svg";
+import image from "../assets/pic.svg";
 
 const features = [
   {
@@ -272,15 +282,15 @@ export default function Home() {
               </span>
             </div>
             <div className={styles.subText}>
-              <div className={styles.ishika}>
+              <div className={styles.griditem}>
                 <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}> Launch 100s of ads together</div>
               </div>
-              <div className={styles.ishika}>
+              <div className={styles.griditem}>
                 <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}> Unlimited Ad Accounts</div>
               </div>
-              <div className={styles.ishika}>
+              <div className={styles.griditem}>
                 <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}>
                   {" "}
@@ -359,30 +369,209 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <div className={styles.grid}>
-          {features2.map((feature, i) => (
-            <div key={i} className={`${styles.card} ${styles[feature.type]}`}>
-              <div className={styles.tag}>{feature.tag}</div>
-              <h3 className={styles.title2}>{feature.title}</h3>
-              <p className={styles.description}>{feature.description}</p>
-              <ul className={styles.highlightList}>
-                {feature.highlights.map((item, idx) => (
-                  <li key={idx} className={styles.highlight}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              {feature.button && (
-                <button className={styles.button}>{feature.button}</button>
-              )}
-              {feature.footer && (
-                <div className={styles.footerIcon}>{feature.footer}</div>
-              )}
-            </div>
-          ))}
-        </div>
+        {/* box section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <div className={styles.mainGrid}>
+            <div className={styles.grid}>
+              <div className={styles.card}>
+                <div className={styles.textwrap}>
+                  <img
+                    src={cardrocket.src}
+                    alt="rocket"
+                    width={31}
+                    height={31}
+                  />
+                  <div className={styles.tag}>2 fast 2 furios</div>
+                </div>
+                <div className={styles.title2}>
+                  Upload multiple creatives at once
+                </div>
+                <div className={styles.cardDes}>
+                  Automate your ad creation flow with lightning-fast bulk
+                  uploads, saved settings, and ad previews — all in one clean
+                  dashboard.
+                </div>
+                <div className={styles.uploadContainer}>
+                  <div className={styles.contentWrap}>
+                    <div className={styles.uploadHeader}>
+                      <img
+                        src={uprocket.src}
+                        alt="rocket"
+                        width={50}
+                        height={50}
+                      />
+                      <span>
+                        <strong>30 Files uploaded</strong> to a new adset
+                      </span>
+                    </div>
+                    <div className={styles.progressBar}>
+                      <div className={styles.progressBarFill}></div>
+                    </div>
+                  </div>
 
-        {/* feature Section */}
+                  <div className={styles.thumbnailStack}>
+                    <img
+                      src={thumb1.src}
+                      alt="thumb1"
+                      className={` ${styles.leftcard}`}
+                    />
+                    <img
+                      src={thumb2.src}
+                      alt="thumb2"
+                      className={`${styles.centercard}`}
+                    />
+                    <img
+                      src={thumb3.src}
+                      alt="thumb3"
+                      className={`${styles.rightcard}`}
+                    />
+                  </div>
+                </div>
+                <div></div>
+              </div>
+              <div className={styles.card2}>
+                <div className={styles.textwrap}>
+                  <img
+                    src={cardsettings.src}
+                    alt="copy"
+                    width={31}
+                    height={31}
+                  />
+                  <div className={styles.tag}>
+                    Every setting everywhere at once
+                  </div>
+                </div>
+                <div className={styles.title2}>
+                  Persistent Settings Per Ad Account
+                </div>
+                <div className={styles.cardDes}>
+                  UTMs, page selections, ad name formulas, all saved, per ad
+                  account, so nothing resets on reload.
+                </div>
+                <div className={styles.gridwrap}>
+                  <div className={styles.gridcontainer}>
+                    <img src={dwimg.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Toggle all Meta Creative Enhancements
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={copimg.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Default CTA, Links and UTMs
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={image.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Custom Ad Naming Conventions
+                    </div>
+                  </div>
+                  <div className={styles.addbutton}>+ Add New Template</div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.grid}>
+              <div className={styles.card2}>
+                <div className={styles.textwrap}>
+                  <img src={copy.src} alt="copy" width={31} height={31} />
+                  <div className={styles.tag}>Saving private templates</div>
+                </div>
+                <div className={styles.title2}>
+                  Apply saved templates for copy, CTA, and links
+                </div>
+                <div className={styles.cardDes}>
+                  Stop wasting time in Meta Ads Manager's clunky interface.
+                  Simply select your ideal settings once. We take care of the
+                  rest.
+                </div>
+                <div className={styles.gridwrap}>
+                  <div className={styles.gridcontainer}>
+                    <img src={dwimg.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Import recently used copy from Meta
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={copimg.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Import recently used copy from Meta
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={image.src} alt="rocket" width={20} height={20} />
+                    <div className={styles.point}>
+                      Import recently used copy from Meta
+                    </div>
+                  </div>
+                  <div className={styles.addbutton}>+ Add New Template</div>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.textwrap}>
+                  <img
+                    src={cardrocket.src}
+                    alt="rocket"
+                    width={31}
+                    height={31}
+                  />
+                  <div className={styles.tag}>2 fast 2 furios</div>
+                </div>
+                <div className={styles.title2}>
+                  Upload multiple creatives at once
+                </div>
+                <div className={styles.cardDes}>
+                  Automate your ad creation flow with lightning-fast bulk
+                  uploads, saved settings, and ad previews — all in one clean
+                  dashboard.
+                </div>
+                <div className={styles.uploadContainer}>
+                  <div className={styles.contentWrap}>
+                    <div className={styles.uploadHeader}>
+                      <img
+                        src={uprocket.src}
+                        alt="rocket"
+                        width={50}
+                        height={50}
+                      />
+                      <span>
+                        <strong>30 Files uploaded</strong> to a new adset
+                      </span>
+                    </div>
+                    <div className={styles.progressBar}>
+                      <div className={styles.progressBarFill}></div>
+                    </div>
+                  </div>
+
+                  <div className={styles.thumbnailStack}>
+                    <img
+                      src={thumb1.src}
+                      alt="thumb1"
+                      className={` ${styles.leftcard}`}
+                    />
+                    <img
+                      src={thumb2.src}
+                      alt="thumb2"
+                      className={`${styles.centercard}`}
+                    />
+                    <img
+                      src={thumb3.src}
+                      alt="thumb3"
+                      className={`${styles.rightcard}`}
+                    />
+                  </div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         <motion.section
           id="features"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
