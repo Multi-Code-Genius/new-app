@@ -273,6 +273,10 @@
   gap: 9px;
 }
 
+.griditem img {
+  height: 30px;
+  width: 30px;
+}
 .inlineIcon img {
   display: inline-block;
   vertical-align: middle;
@@ -1422,6 +1426,7 @@
 
   .griditem img {
     height: 20px;
+    width: 20px;
   }
 
   .buttoncontainer {

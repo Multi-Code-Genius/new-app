@@ -257,15 +257,15 @@ export default function Home() {
           </div>
           <div className={styles.subText}>
             <div className={styles.griditem}>
-              <img src={right.src} alt="right" width={21} height={21} />
+              <img src={right.src} alt="right" />
               <div className={styles.text}> Launch 100s of ads together</div>
             </div>
             <div className={styles.griditem}>
-              <img src={right.src} alt="right" width={21} height={21} />
+              <img src={right.src} alt="right" />
               <div className={styles.text}> Unlimited Ad Accounts</div>
             </div>
             <div className={styles.griditem}>
-              <img src={right.src} alt="right" width={21} height={21} />
+              <img src={right.src} alt="right" />
               <div className={styles.text}>
                 {" "}
                 Save your settings and launch an ad in seconds
