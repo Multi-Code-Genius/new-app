@@ -457,7 +457,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div></div>
             </div>
             <div className={styles.card4}>
               <div className={styles.textwrap}>
@@ -473,7 +472,7 @@ export default function Home() {
                 UTMs, page selections, ad name formulas, all saved, per ad
                 account, so nothing resets on reload.
               </div>
-              <div className={styles.gridwrap}>
+              <div className={styles.gridwrap1}>
                 <div className={styles.gridcontainer}>
                   <div class={styles.stepbadge}>1</div>
                   <div className={styles.point}>
@@ -492,7 +491,7 @@ export default function Home() {
                     Custom Ad Naming Conventions
                   </div>
                 </div>
-                <div className={styles.addbutton}>+ Add New Template</div>
+                <div className={styles.addbutton1}>save settings</div>
               </div>
             </div>
           </div>

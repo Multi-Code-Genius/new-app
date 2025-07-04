@@ -992,25 +992,31 @@
 .contentWrap {
   display: flex;
   flex-direction: column;
-  /* width: 60%; */
+  justify-content: center;
+  gap: 12px;
+  max-width: 75%;
 }
-
 .gridwrap {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 21px;
 }
+.gridwrap1 {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 51px;
+}
 
 .uploadContainer {
   margin-top: 20px;
   background: white;
-  padding: 16px;
+  padding: 16px 20px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap: 20px; */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -1035,6 +1041,16 @@
   font-weight: bold;
   border-radius: 34px;
 }
+.addbutton1 {
+  padding: 19.6px 159.4px 19.6px 174.4px;
+  opacity: 0.9;
+  background-color: #0c8416;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 34px;
+}
 
 .point {
   font-size: 16px;
@@ -1047,67 +1063,62 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 100%;
   font-size: 16px;
   color: #573b03;
   font-weight: 600;
 }
 
+.uploadHeader strong {
+  font-weight: 700;
+  margin-right: 4px;
+}
 .progressBar {
-  height: 44px;
+  height: 40px;
+  width: 100%;
   background: #eee;
   border-radius: 999px;
   overflow: hidden;
+  position: relative;
 }
 
 .progressBarFill {
-  width: 50%;
-  /* adjust based on progress */
   height: 100%;
-  background: #f3705a;
+  width: 70%;
+  background-color: #e76f51;
+  border-radius: 999px;
   transition: width 0.3s ease;
-  border-radius: 100px;
 }
 
 .thumbnailStack {
   position: relative;
-  width: 120px;
-  height: 80px;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftcard,
+.centercard,
+.rightcard {
+  position: absolute;
+  width: 85px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .leftcard {
-  position: absolute;
-  width: 60px;
-  height: 70px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transform: rotate(-15deg) translateX(-35px);
+  transform: rotate(-10deg) translateX(-20px);
   z-index: 1;
 }
 
 .centercard {
-  position: absolute;
-  width: 60px;
-  height: 70px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transform: rotate(0deg) translateX(0px);
-  z-index: 3;
+  transform: rotate(0deg);
+  z-index: 99999;
 }
 
 .rightcard {
-  position: absolute;
-  width: 60px;
-  height: 70px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transform: rotate(15deg) translateX(35px);
+  transform: rotate(10deg) translateX(20px);
   z-index: 2;
 }
 
