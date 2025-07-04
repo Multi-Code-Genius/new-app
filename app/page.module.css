@@ -236,6 +236,7 @@
   gap: 150px;
   display: flex;
   padding: 10px;
+  margin-top: 80px;
   flex-direction: column;
 }
 
@@ -243,6 +244,7 @@
   .container {
     padding: 0 20px;
     gap: 100px;
+    margin-top: 0px;
   }
 }
 
