@@ -493,7 +493,14 @@ export default function Home() {
                       <div className={styles.progressBarFill1}></div>
                     </div>
                   </div>
-                  <img src={logonew.src} alt="Rocket" width={90} height={90} />
+                  <div>
+                    <img
+                      src={logonew.src}
+                      alt="Rocket"
+                      width={110}
+                      height={110}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
