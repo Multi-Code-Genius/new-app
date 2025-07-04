@@ -739,6 +739,7 @@
   gap: 20px;
   width: 100%;
 }
+
 .card {
   width: 100%;
   height: 434.6px;
@@ -1190,11 +1191,47 @@
     padding: 20px 15px;
   }
 
+  .mainGrid {
+    flex-direction: column;
+  }
+
+  .uploadContainer {
+    display: none;
+  }
+
+  .uploadContainer1 {
+    display: none;
+  }
+  .gridwrap {
+    display: none;
+  }
   .feature-box {
     padding: 30px 20px;
     min-height: 350px;
   }
 
+  .tag {
+    font-size: 18px;
+  }
+  .title2 {
+    font-size: 24px;
+  }
+  .cardDes {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 21px;
+  }
+  .card2 {
+    height: 434px;
+  }
+  .card3 {
+    height: 434px;
+  }
+  .card4 {
+    height: 434px;
+  }
   .feature-title {
     font-size: 24px;
   }
