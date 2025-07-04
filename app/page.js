@@ -1,8 +1,8 @@
 "use client";
 import styles from "./page.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import logo from "../assets/logo.png";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import roket from "../assets/uploadrocket2.png";
 import star from "../assets/3dStar.png";
 import right from "../assets/Frame.png";
@@ -20,18 +20,113 @@ import iconBlue from "../assets/iconBlue.svg";
 import iconGreen from "../assets/iconGreen.svg";
 import iconRed from "../assets/iconRed.svg";
 
+const features = [
+  {
+    title: "Turn on/off All Creative Enhancement",
+    icon: iconPink.src || iconPink,
+    iconClass: styles.iconPink,
+  },
+  {
+    title: "Custom Naming Convention",
+    icon: iconPurple.src || iconPurple,
+    iconClass: styles.iconPurple,
+  },
+  {
+    title: "Launch Ads Turned off",
+    icon: iconOrange.src || iconOrange,
+    iconClass: styles.iconOrange,
+  },
+  {
+    title: "Bulk Launch Ads 10X faster",
+    icon: iconBlue.src || iconBlue,
+    iconClass: styles.iconBlue,
+  },
+  {
+    title: "Enterprise Settings",
+    icon: iconGreen.src || iconGreen,
+    iconClass: styles.iconGreen,
+  },
+  {
+    title: "UTM Management",
+    icon: iconRed.src || iconRed,
+    iconClass: styles.iconRed,
+  },
+];
+
+const features2 = [
+  {
+    tag: "🚀 2 fast 2 furious",
+    title: "Upload multiple creatives at once",
+    description:
+      "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
+    highlights: ["30 files uploaded to a new client"],
+    footer: "📸",
+    type: "red",
+  },
+  {
+    tag: "💾 Saving private templates",
+    title: "Apply saved templates for copy, CTA, and links",
+    description:
+      "Stop wasting time in Meta Ads Manager’s clunky interface. Simply select your ideal settings once. We take care of the rest.",
+    highlights: [
+      "Import recently used copy from Meta",
+      "Save Variations of Primary Text and Headlines",
+      "Making ads using new template",
+    ],
+    button: "+ Add New Template",
+    type: "blue",
+  },
+  {
+    tag: "🛠️ Every setting everywhere at once",
+    title: "Persistent Settings Per Ad Account",
+    description:
+      "UTMs, page selections, ad name formulas, all saved, per ad account, so nothing resets on reload.",
+    highlights: [
+      "Toggle all Meta Creative Enhancements",
+      "Default CTAs, Links and UTMs",
+      "Custom Ad Naming Conventions",
+    ],
+    button: "Save Settings",
+    type: "green",
+  },
+  {
+    tag: "📁 Arrival",
+    title: "No more upload, download hell.",
+    description:
+      "No need to spend hours downloading hundreds of assets. With Blip, you can one-click deploy media from your Drive to Meta Ads Manager.",
+    highlights: ["🚀", "🧠"],
+    type: "orange",
+  },
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
   const menuBtnRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+  const isScrolling = useRef(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      if (!isScrolling.current) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 0);
+        });
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -54,111 +149,49 @@ export default function Home() {
     };
   }, [menuOpen]);
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const navbarHeight = 105;
-      const sectionPosition = section.getBoundingClientRect().top;
-      const offsetPosition =
-        sectionPosition + window.pageYOffset - navbarHeight;
+  const scrollToSection = useCallback(
+    (e, sectionId) => {
+      e.preventDefault();
+      const section = document.getElementById(sectionId);
+      if (section) {
+        isScrolling.current = true;
+        const navbarHeight = 105;
+        const sectionPosition = section.getBoundingClientRect().top;
+        const offsetPosition =
+          sectionPosition + window.pageYOffset - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+        const startTime = performance.now();
+        const startPosition = window.pageYOffset;
+        const distance = offsetPosition - startPosition;
+        const duration = Math.min(Math.abs(distance) * 0.5, 800);
 
-      if (menuOpen) setMenuOpen(false);
-    }
-  };
-  const features = [
-    {
-      title: "Turn on/off All Creative Enhancement",
-      icon: iconPink.src || iconPink,
-      iconClass: styles.iconPink,
-    },
-    {
-      title: "Custom Naming Convention",
-      icon: iconPurple.src || iconPurple,
-      iconClass: styles.iconPurple,
-    },
-    {
-      title: "Launch Ads Turned off",
-      icon: iconOrange.src || iconOrange,
-      iconClass: styles.iconOrange,
-    },
-    {
-      title: "Bulk Launch Ads 10X faster",
-      icon: iconBlue.src || iconBlue,
-      iconClass: styles.iconBlue,
-    },
-    {
-      title: "Enterprise Settings",
-      icon: iconGreen.src || iconGreen,
-      iconClass: styles.iconGreen,
-    },
-    {
-      title: "UTM Management",
-      icon: iconRed.src || iconRed,
-      iconClass: styles.iconRed,
-    },
-  ];
+        function easeInOutCubic(t) {
+          return t < 0.5
+            ? 4 * t * t * t
+            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        }
 
-  const features2 = [
-    {
-      tag: "🚀 2 fast 2 furious",
-      title: "Upload multiple creatives at once",
-      description:
-        "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-      highlights: ["30 files uploaded to a new client"],
-      footer: "📸",
-      type: "red",
-    },
-    {
-      tag: "💾 Saving private templates",
-      title: "Apply saved templates for copy, CTA, and links",
-      description:
-        "Stop wasting time in Meta Ads Manager’s clunky interface. Simply select your ideal settings once. We take care of the rest.",
-      highlights: [
-        "Import recently used copy from Meta",
-        "Save Variations of Primary Text and Headlines",
-        "Making ads using new template",
-      ],
-      button: "+ Add New Template",
-      type: "blue",
-    },
-    {
-      tag: "🛠️ Every setting everywhere at once",
-      title: "Persistent Settings Per Ad Account",
-      description:
-        "UTMs, page selections, ad name formulas, all saved, per ad account, so nothing resets on reload.",
-      highlights: [
-        "Toggle all Meta Creative Enhancements",
-        "Default CTAs, Links and UTMs",
-        "Custom Ad Naming Conventions",
-      ],
-      button: "Save Settings",
-      type: "green",
-    },
-    {
-      tag: "📁 Arrival",
-      title: "No more upload, download hell.",
-      description:
-        "No need to spend hours downloading hundreds of assets. With Blip, you can one-click deploy media from your Drive to Meta Ads Manager.",
-      highlights: ["🚀", "🧠"],
-      type: "orange",
-    },
-  ];
+        function animateScroll(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = easeInOutCubic(progress);
 
-  const [scrolled, setScrolled] = useState(false);
+          window.scrollTo(0, startPosition + distance * ease);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          } else {
+            isScrolling.current = false;
+          }
+        }
+
+        requestAnimationFrame(animateScroll);
+        if (menuOpen) setMenuOpen(false);
+      }
+    },
+    [menuOpen]
+  );
+
   return (
     <div className={styles.landing}>
       <header className={styles.header}>
@@ -215,10 +248,14 @@ export default function Home() {
       <div className={styles.container}>
         {/* text content */}
         <motion.section
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.6,
+            ease: "easeOut",
+            opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+          }}
         >
           <div className={styles.textcontainer}>
             <div className={styles.heroText}>
@@ -281,10 +318,14 @@ export default function Home() {
         {/* About section */}
         <motion.section
           id="about"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.6,
+            ease: "easeOut",
+            opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+          }}
         >
           <div className={styles.content}>
             <div className={styles.head}>
@@ -344,10 +385,14 @@ export default function Home() {
         {/* feature Section */}
         <motion.section
           id="features"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.6,
+            ease: "easeOut",
+            opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+          }}
         >
           <div className={styles.wrapperIcon}>
             <div className={styles.badgeTitle}>Built by the best</div>
@@ -378,10 +423,14 @@ export default function Home() {
 
         <motion.section
           id="pricing"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.6,
+            ease: "easeOut",
+            opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+          }}
         >
           <div className={styles.wrapper}>
             <div className={styles.container2}>

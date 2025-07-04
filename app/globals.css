@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&display=swap");
+
 /* NexaRound font utility classes */
 .font-nexa-round {
   font-family: var(--font-nexa-round);
@@ -47,4 +49,61 @@
 .font-nexa-ultra {
   font-family: var(--font-nexa-round);
   font-weight: 950;
+}
+
+/* Performance optimizations for smooth scrolling and animations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Disable scroll-behavior to prevent conflicts with JS implementation */
+  scroll-behavior: auto;
+}
+
+body {
+  /* Improve rendering performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  
+  /* Prevent layout shifts */
+  margin: 0;
+  padding: 0;
+  
+  /* Optimize for animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize motion elements for better performance */
+[data-framer-component] {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize images for better performance */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: optimizeQuality;
+}
+
+/* Improve scrolling performance on mobile */
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }

@@ -1,11 +1,192 @@
-/* Using local NexaRound_Trial fonts configured in layout.js */
+.landing {
+  font-family: var(--font-nexa-round), sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #5a1a01;
+  background-color: #FFFDF8 !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&display=swap");
+.header {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  margin-top: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.brandText {
+  font-family: var(--font-nexa-round), sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #5a1a01;
+  margin-left: 12px;
+}
+
+.navLinks {
+
+  position: fixed;
+  top: 20px;
+  z-index: 1000;
+  right: 60px;
+  transform: translateX(-50%);
+  width: 438px;
+  height: 75px;
+  background: #2a2a2a;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+  gap: 28px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.navLinks.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.navLinks a {
+  color: #FFF;
+  font-family: "Cal Sans", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  font-style: normal;
+  line-height: normal;
 
 
+}
 
-html {
-  scroll-behavior: smooth;
+.navLinks .startBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  font-family: "Cal Sans", sans-serif;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+
+}
+
+.menuBtn {
+  margin-left: auto;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-size: 18px;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  font-family: "Cal Sans", sans-serif;
+
+
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  background: #2a2a2a;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px 20px 30px 20px;
+  z-index: 1002;
+  margin: 20px;
+  transform: scale(0.8) translateY(-20px);
+  transform-origin: top center;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenu.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileMenu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  padding: 5px 0;
+  font-family: "Cal Sans", sans-serif;
+}
+
+.mobileMenu .startBtn {
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 999px;
+  font-size: 18px;
+  width: auto;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: "Cal Sans", sans-serif;
+}
+
+
+@media (min-width: 841px) {
+  .mobileMenu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 840px) {
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brandText {
+    font-size: 32px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
 }
 
 .page {
@@ -230,7 +411,7 @@ html {
 .wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  padding: 2rem 1rem;
   background-color: #fffbf3;
 }
 
@@ -241,7 +422,7 @@ html {
   border-radius: 39px;
   background: #3972eb;
   border: 2px solid #000;
-  padding: 31px 33px;
+  padding: 40px;
   color: #fff;
   font-family: "Cal Sans", sans-serif;
   display: flex;
@@ -249,119 +430,145 @@ html {
   justify-content: space-between;
   box-shadow: 10px 10px 0px #ffa5a5;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 
 .left,
 .right {
-  /* flex: 1 1 1; */
   min-width: 280px;
+  flex: 1;
 }
 
 .badge {
-
   font-size: 14px;
   padding: 6px 20px;
   border: 1px solid white;
   border-radius: 20px;
   display: inline-block;
   margin-bottom: 1rem;
+  font-family: Geist;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.title2 {
+.price1 {
   font-family: var(--font-nexa-round), sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
 .description {
-
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff8e9;
-  max-width: 313px;
-  width: 100%;
+  color: #FFF8E9;
+  font-size: 16px;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .cta {
   background: #fff;
-  color: #768fc0;
-
+  color: #3972eb;
   font-weight: 700;
-  padding: 10px 27px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 12px 32px;
+  border-radius: 24px;
   border: none;
   margin-bottom: 2rem;
   cursor: pointer;
+  font-size: 16px;
+  font-family: Geist;
 }
 
 .teamNote {
   font-family: var(--font-nexa-round), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.6;
-  line-height: 160%;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .teamComing {
   font-family: var(--font-nexa-round), sans-serif;
-  font-size: 32px;
-  font-weight: 950;
-  line-height: 120%;
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFBF3;
 }
 
 .price {
   background: #fff;
   color: #3972eb;
-  font-family: "Arial Rounded MT Bold", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  padding: 10px 40px;
-  border-radius: 49px;
+  font-family: var(--font-nexa-round), sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 40px;
   margin-bottom: 2rem;
   text-align: center;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .features {
   list-style: none;
   padding: 0;
   font-size: 18px;
-  line-height: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .feature {
-  margin-bottom: 1rem;
   position: relative;
-  padding-left: 32px;
+  padding-left: 36px;
   font-family: "Cal Sans", sans-serif;
-  font-weight: 600;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .feature::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #fff;
-  font-size: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: #fff;
+  color: #3972eb;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ✅ RESPONSIVE */
+
 @media (max-width: 768px) {
-  .container {
+  .container2 {
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
   }
 
   .price {
-    margin: 1.5rem auto;
+    font-size: 36px;
   }
 
   .feature {
-    text-align: left;
+    font-size: 16px;
+  }
+
+  .price1 {
+    font-size: 28px;
+  }
+
+  .teamComing {
+    font-size: 22px;
   }
 }
 
@@ -399,10 +606,14 @@ html {
 }
 
 .price1 {
+  color: #FFF;
+
+  font-family: var(--font-nexa-round), sans-serif;
   font-size: 32px;
-  letter-spacing: -0.64px;
-  text-align: left;
-  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
 }
 
 .subtitle {
@@ -842,211 +1053,4 @@ html {
 
 .rocket-icon {
   background: #ff6b6b;
-}
-
-
-
-
-.landing {
-  font-family: var(--font-nexa-round), sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #5a1a01;
-  background-color: #FFFDF8 !important;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-html,
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.header {
-  position: relative;
-  width: 100%;
-  height: 75px;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  box-sizing: border-box;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
-  margin-top: 30px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  z-index: 1000;
-}
-
-.logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.brandText {
-  font-family: var(--font-nexa-round), sans-serif;
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: #5a1a01;
-  margin-left: 12px;
-}
-
-.navLinks {
-  position: fixed;
-  top: 30px;
-  right: 60px;
-  transform: translateX(-50%);
-  width: 438px;
-  height: 75px;
-  background: #2a2a2a;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 20px;
-  gap: 28px;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
-
-.navLinks.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.navLinks a {
-  color: #FFF;
-  font-family: "Cal Sans", sans-serif;
-  font-size: 18px;
-  text-decoration: none;
-  font-style: normal;
-  line-height: normal;
-
-
-}
-
-.navLinks .startBtn {
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  background: #fff;
-  font-family: "Cal Sans", sans-serif;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-
-}
-
-.menuBtn {
-  margin-left: auto;
-  background: #2a2a2a;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 999px;
-  font-size: 18px;
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-  font-family: "Cal Sans", sans-serif;
-
-
-}
-
-.mobileMenu {
-  position: fixed;
-  top: 10px;
-  left: 0;
-  right: 0;
-  height: auto;
-  max-height: 80vh;
-  background: #2a2a2a;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 40px 20px 30px 20px;
-  z-index: 1002;
-  margin: 20px;
-  transform: scale(0.8) translateY(-20px);
-  transform-origin: top center;
-  opacity: 0;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.mobileMenu.open {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-  pointer-events: all;
-}
-
-.mobileMenu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 24px;
-  text-align: left;
-  width: 100%;
-  padding: 5px 0;
-  font-family: "Cal Sans", sans-serif;
-}
-
-.mobileMenu .startBtn {
-  padding: 0.75rem 1.5rem;
-  background: #fff;
-  color: #000;
-  border: none;
-  border-radius: 999px;
-  font-size: 18px;
-  width: auto;
-  margin-top: 20px;
-  cursor: pointer;
-  font-family: "Cal Sans", sans-serif;
-}
-
-/* Responsive Media Queries */
-@media (min-width: 841px) {
-  .mobileMenu {
-    display: none !important;
-  }
-}
-
-@media (max-width: 840px) {
-  .logo {
-    width: 32px;
-    height: 32px;
-  }
-
-  .brandText {
-    font-size: 32px;
-  }
-
-  .navLinks {
-    display: none;
-  }
-
-  .menuBtn {
-    display: block;
-  }
 }
