@@ -179,7 +179,17 @@ export default function Home() {
         </header>
 
         <div className={styles.container}>
-          <section className={styles.textcontainer}>
+          <motion.section
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            transition={{
+              duration: shouldReduceMotion ? 0 : 0.6,
+              ease: "easeOut",
+              opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+            }}
+            className={styles.textcontainer}
+          >
             <div className={styles.heroText}>
               The simplest,
               <span className={styles.inlineIcon}>
@@ -214,9 +224,8 @@ export default function Home() {
               <div className={styles.button}>Get Started</div>
               <div className={styles.button1}>View Demo</div>
             </div>
+          </motion.section>
 
-            {/* </motion.section> */}
-          </section>
           <div className={styles.textcontainer2}>
             <div className={styles.heroText}>
               The simplest,
