@@ -625,7 +625,6 @@
   /* padding: 2rem 1rem; */
   background-color: #fffbf3;
   scroll-margin-top: 120px;
-
 }
 
 .nopadding {
@@ -635,7 +634,7 @@
 @media (max-width: 768px) {
   .wrapper {
     padding: 0;
-    margin-bottom: 117px;
+    /* margin-bottom: 117px; */
   }
 }
 
@@ -706,7 +705,7 @@
 
 .ctaBtn {
   background: #fff;
-  color: #768FC0;
+  color: #768fc0;
   font-weight: 700;
   padding: 12px 32px;
   border-radius: 24px;
@@ -722,7 +721,6 @@
   font-size: 16px;
   opacity: 0.6;
   margin-bottom: 0;
-
 }
 
 .teamComing {
@@ -765,8 +763,6 @@
   display: flex;
   align-items: center;
 }
-
-
 
 .icon {
   position: absolute;
@@ -823,7 +819,6 @@
   .teamNote {
     display: none;
   }
-
 
   .comingSoonSm {
     display: block;
