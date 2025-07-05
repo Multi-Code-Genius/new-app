@@ -695,8 +695,9 @@
 .description {
   color: #fff8e9;
   margin-bottom: 16px;
+  margin-top: 0;
   line-height: 1.6;
-  max-width: 313px;
+  max-width: 308px;
   font-family: Geist;
   font-size: 14px;
   font-weight: 400;
@@ -936,6 +937,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: 0;
 }
 
 .subtitle {
