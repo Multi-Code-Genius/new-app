@@ -992,7 +992,7 @@
 @media (max-width: 768px) {
   .wrapperIcon {
     text-align: left;
-    padding: 32px 7px;
+    padding: 32px 0px;
   }
 
   .badgeTitle,
