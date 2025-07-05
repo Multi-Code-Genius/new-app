@@ -1096,10 +1096,10 @@
 }
 
 .stepbadge {
-  width: 30px;
+  width: 34px;
   height: 30px;
   border: 2px dashed #d4145a;
-  border-radius: 50%;
+  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

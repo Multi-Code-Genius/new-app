@@ -73,6 +73,13 @@ export default function Home() {
   const shouldReduceMotion = useReducedMotion();
 
   const landingRef = useRef();
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -277,14 +284,21 @@ export default function Home() {
           </div>
 
           <div className={styles.imageWrapper1}>
-            <img
-              alt="video"
-              src={video.src}
+            <video
+              ref={videoRef}
+              className={styles.image}
               width={1200}
               height={900}
-              className={styles.image}
-            />
-            <button className={styles.overlayButton}>
+              controls
+              muted
+              loop
+              poster={video.src}
+            >
+              <source src="../videos/sample.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <button onClick={handlePlay} className={styles.overlayButton}>
               <img
                 src={plus.src}
                 alt="icon"
