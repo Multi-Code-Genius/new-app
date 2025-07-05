@@ -392,6 +392,12 @@
   }
 }
 
+.menuBtnText {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .sparkle {
   img {
     @media (max-width: 768px) {

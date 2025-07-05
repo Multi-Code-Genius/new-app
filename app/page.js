@@ -33,6 +33,7 @@ import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
 import humberger from "../assets/humberger.png";
+import closeIcon from "../assets/closeIcon.png";
 
 const features = [
   {
@@ -148,7 +149,12 @@ export default function Home() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             <div className={styles.menuBtnText}>Menu</div>
-            <img src={humberger.src} width={20} height={20} alt="humberger" />
+            <img
+              src={menuOpen ? closeIcon.src : humberger.src}
+              width={20}
+              height={20}
+              alt="humberger"
+            />
           </button>
 
           <div
