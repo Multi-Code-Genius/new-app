@@ -586,6 +586,25 @@ export default function Home() {
               </div>
             </div>
           </motion.section>
+          <div className={styles.footer}>
+            <div className={styles.footerLeft}>
+              <div className={styles.leftTop}>
+                <img src={logo.src} alt="logo" width={32} height={32} />
+                <span className={styles.brandTextFooter}>Blip</span>
+              </div>
+              <div className={styles.footerEmail}>shree@withblip.com</div>
+            </div>
+            <div className={styles.footerRight}>
+              <div className={styles.footerPolicies}>Privacy Policy</div>
+              <div className={styles.footerPolicies}>Terms of Service</div>
+              <div className={styles.footerPoliciesNew}>
+                Blip use and transfer of information received from Google APIs
+                to any other app will adhere to{" "}
+                <span>Workspace API User Data and Developer Policy</span>,
+                including the <span>Limited use of user data.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
