@@ -247,7 +247,7 @@ export default function Home() {
                 quickest{" "}
               </span>
               bulk ad <br /> uploader{" "}
-              <span className={styles.inlineIcon}>
+              <span className={`${styles.inlineIcon} ${styles.sparkle}`}>
                 <img src={star.src} alt="sparkles" />
               </span>{" "}
               for Meta.

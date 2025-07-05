@@ -393,8 +393,10 @@
 }
 
 .sparkle {
-  @media (min-width: 768px) {
-    transform: scale(1.4) !important;
+  img {
+    @media (max-width: 768px) {
+      transform: scale(1.4) !important;
+    }
   }
 }
 
