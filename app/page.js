@@ -24,6 +24,7 @@ import thumb1 from "../assets/thumb1.png";
 import thumb2 from "../assets/thumb2.png";
 import thumb3 from "../assets/thumb3.png";
 import copy from "../assets/transparentCopy.svg";
+import check from "../assets/checkmark.svg";
 import cardsettings from "../assets/transparentSetting.svg";
 import download from "../assets/transparentDoenload.svg";
 import dwimg from "../assets/download.svg";
@@ -302,7 +303,7 @@ export default function Home() {
               <img
                 src={plus.src}
                 alt="icon"
-                className={styles.icon}
+                className={styles.icon2}
                 width={50}
                 height={50}
               />
@@ -601,7 +602,7 @@ export default function Home() {
                   UTMs, page selections, ad name formulas — all saved, per ad
                   account, so nothing resets on reload.
                 </p>
-                <button className={styles.cta}>Start Posting Ads</button>
+                <button className={styles.ctaBtn}>Start Posting Ads</button>
                 <p className={styles.teamNote}>
                   have a lot of people on your team?
                 </p>
@@ -612,11 +613,29 @@ export default function Home() {
                 <div className={styles.price}>$500/month</div>
                 <ul className={styles.features}>
                   <li className={styles.feature}>
+                    <span className={styles.icon}>
+                      <img src={check.src} alt="check" width={14} height={14} />
+                    </span>
                     Launch 100s of ads together
                   </li>
-                  <li className={styles.feature}>Unlimited Ad Accounts</li>
-                  <li className={styles.feature}>Persistent Settings</li>
+                  <li className={styles.feature}>
+                    <span className={styles.icon}>
+                      <img src={check.src} alt="check" width={14} height={14} />
+                    </span>
+                    Unlimited Ad Accounts
+                  </li>
+                  <li className={styles.feature}>
+                    <span className={styles.icon}>
+                      <img src={check.src} alt="check" width={14} height={14} />
+                    </span>
+                    Persistent Settings
+                  </li>
                 </ul>
+                <p className={styles.teamNoteSm}>
+                  have a lot of people on your team?
+                </p>
+                <p className={styles.comingSoonSm}>Team seats Coming Soon</p>
+                <button className={styles.ctaSm}>Start Posting Ads</button>
               </div>
             </div>
           </motion.section>
