@@ -303,7 +303,7 @@ export default function Home() {
               <img
                 src={plus.src}
                 alt="icon"
-                className={styles.icon}
+                className={styles.icon2}
                 width={50}
                 height={50}
               />
