@@ -314,12 +314,12 @@
   border-radius: 39px;
   padding: 40px;
   align-items: center;
+  margin-bottom: 20px;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: unset;
     gap: 24px;
-    margin-bottom: 20px;
   }
 }
 .page {
