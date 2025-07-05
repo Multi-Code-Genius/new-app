@@ -824,7 +824,7 @@
   .comingSoonSm {
     display: block;
     font-family: var(--font-nexa-round), sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 800;
     color: #fffbf3;
     margin-top: 0;
@@ -852,6 +852,7 @@
     font-size: 14px;
     opacity: 0.6;
     margin-bottom: 0;
+    margin-top: 40px;
   }
 
   .head {
