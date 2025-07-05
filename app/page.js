@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import logo from "../assets/logo.png";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import roket from "../assets/uploadrocket2.png";
-import star from "../assets/3dStar.png";
+import star from "../assets/star.png";
 import right from "../assets/Frame.png";
 import video from "../assets/Screenshot.png";
 import plus from "../assets/pauseCtaFrame.svg";
@@ -195,11 +195,12 @@ export default function Home() {
               <span className={styles.inlineIcon}>
                 <img src={roket.src} alt="rocket" />
                 quickest
+                <span style={{ marginRight: "5px" }} />
               </span>
               <br />
               bulk ad uploader
               <span className={styles.inlineIcon}>
-                <img src={star.src} alt="sparkles" />
+                <img src={star.src} alt="sparkles" className={styles.sparkle} />
               </span>
               for Meta.
             </div>

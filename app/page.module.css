@@ -37,8 +37,10 @@
 
 .logoWrapper {
   position: absolute;
-  top: 30px;
+  top: 36px;
   left: 50px;
+  display: flex;
+  align-items: center;
   z-index: 1001;
 }
 
@@ -50,7 +52,7 @@
 
 .brandText {
   font-family: var(--font-nexa-round), sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 48px;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -281,6 +283,18 @@
 .inlineIcon img {
   width: 100px;
   height: 100px;
+  transform: scale(1.5);
+
+  @media (min-width: 768px) {
+    transform: scale(2);
+  }
+
+}
+
+.sparkle {
+  @media (min-width: 768px) {
+    transform: scale(1.4) !important;
+  }
 }
 
 .subText {
@@ -931,6 +945,7 @@
     padding: 0 10px;
     gap: 40px;
   }
+
   .mainGrid {
     gap: 40px;
   }
@@ -948,6 +963,7 @@
   position: relative;
   z-index: 1;
 }
+
 .card::after {
   content: "";
   position: absolute;
