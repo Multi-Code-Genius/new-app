@@ -897,11 +897,11 @@
 .iconBox img {
   width: 24px;
   height: 24px;
-  filter: brightness(0) saturate(100%);
+  filter: brightness(1);
 }
 
 .iconPink {
-  background: linear-gradient(180deg, #eb69f9 0%, #facbff 100%);
+  background-image: linear-gradient(to bottom, #eb69f9 1%, #facbff 99%);
   border: 1px solid #7f0f91;
   box-shadow: 0px 2px 10px #ea65ff;
 }
@@ -938,7 +938,7 @@
 
 .featureText {
   font-family: var(--font-nexa-round), sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 18px;
   color: #161616;
   text-align: left;
@@ -968,7 +968,7 @@
 @media (max-width: 768px) {
   .wrapperIcon {
     text-align: left;
-    padding: 32px 20px;
+    padding: 32px 7px;
   }
 
   .badgeTitle,
@@ -976,7 +976,7 @@
     text-align: left;
     margin-left: 0;
     margin-right: 0;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .title {

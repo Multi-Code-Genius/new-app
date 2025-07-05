@@ -36,32 +36,32 @@ import humberger from "../assets/humberger.png";
 const features = [
   {
     title: "Turn on/off All Creative Enhancement",
-    icon: iconPink.src || iconPink,
+    icon: iconPink.src,
     iconClass: styles.iconPink,
   },
   {
     title: "Custom Naming Convention",
-    icon: iconPurple.src || iconPurple,
+    icon: iconPurple.src,
     iconClass: styles.iconPurple,
   },
   {
     title: "Launch Ads Turned off",
-    icon: iconOrange.src || iconOrange,
+    icon: iconOrange.src,
     iconClass: styles.iconOrange,
   },
   {
     title: "Bulk Launch Ads 10X faster",
-    icon: iconBlue.src || iconBlue,
+    icon: iconBlue.src,
     iconClass: styles.iconBlue,
   },
   {
     title: "Enterprise Settings",
-    icon: iconGreen.src || iconGreen,
+    icon: iconGreen.src,
     iconClass: styles.iconGreen,
   },
   {
     title: "UTM Management",
-    icon: iconRed.src || iconRed,
+    icon: iconRed.src,
     iconClass: styles.iconRed,
   },
 ];
