@@ -306,7 +306,7 @@ export default function Home() {
               ease: "easeOut",
               opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
             }}
-            className={styles.content}
+            className={`${styles.content} ${styles.nopadding}`}
           >
             <div className={styles.head}>
               <img src={rose.src} width={24} height={24} alt="rose" />
@@ -324,15 +324,33 @@ export default function Home() {
             </div>
             <div className={styles.buttonGroup}>
               <div className={styles.shadowButton}>
-                <img src={swap.src} alt="swap" width={30} height={30} />
+                <img
+                  src={swap.src}
+                  alt="swap"
+                  width={30}
+                  height={30}
+                  className={styles.myImg}
+                />
                 <span>Easily Swap Ad Accounts</span>
               </div>
               <div className={styles.shadowButton}>
-                <img src={settings.src} alt="settings" width={30} height={30} />
+                <img
+                  src={settings.src}
+                  alt="settings"
+                  width={30}
+                  height={30}
+                  className={styles.myImg}
+                />
                 <span>Persistent Settings</span>
               </div>
               <div className={styles.shadowButton}>
-                <img src={rocket.src} alt="rocket" width={30} height={30} />
+                <img
+                  src={rocket.src}
+                  alt="rocket"
+                  width={30}
+                  height={30}
+                  className={styles.myImg}
+                />
                 <span>Fast launch all creatives</span>
               </div>
             </div>
@@ -526,12 +544,11 @@ export default function Home() {
             }}
           >
             <div className={styles.badgeTitle}>Built by the best</div>
-            <h2 className={styles.title}>
-              Blip has been built by people with over
-              <br />
-              10 years of experience launching ads
+            <h2 className={`${styles.title} ${styles.titleupdate}`}>
+              Blip has been built by people with over 10 years of experience
+              launching ads
             </h2>
-            <p className={styles.subtitle}>
+            <p className={`${styles.subtitle} ${styles.nosubtitle}`}>
               The team behind blip has managed over 10mil in ad spend. <br />
               The experience has been tailored to the absolute essentials which
               will improve your quality of life.
