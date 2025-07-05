@@ -1,11 +1,11 @@
 "use client";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState, useCallback } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import roket from "../assets/uploadrocket2.png";
 import star from "../assets/star.png";
-import right from "../assets/Frame.png";
+import right from "../assets/Frame.webp";
 import video from "../assets/Screenshot.png";
 import plus from "../assets/pauseCtaFrame.svg";
 import rose from "../assets/rose.svg";
@@ -31,6 +31,7 @@ import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
+import humberger from "../assets/humberger.png";
 
 const features = [
   {
@@ -130,16 +131,18 @@ export default function Home() {
 
         <header className={styles.header}>
           <div className={styles.brand}>
-            <img src={logo.src} alt="logo" width={48} height={48} />
+            <img src={logo.src} alt="logo" width={32} height={32} />
             <span className={styles.brandText}>Blip</span>
           </div>
           <button
-            ref={menuBtnRef}
             className={styles.menuBtn}
+            ref={menuBtnRef}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            Menu
+            <div className={styles.menuBtnText}>Menu</div>
+            <img src={humberger.src} width={20} height={20} alt="humberger" />
           </button>
+
           <div
             ref={mobileMenuRef}
             className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
@@ -233,12 +236,12 @@ export default function Home() {
               <span className={styles.inlineIcon}>
                 <img src={roket.src} alt="rocket" />
                 <br />
-                quickest
+                quickest{" "}
               </span>
-              bulk ad <br /> uploader
+              bulk ad <br /> uploader{" "}
               <span className={styles.inlineIcon}>
                 <img src={star.src} alt="sparkles" />
-              </span>
+              </span>{" "}
               for Meta.
             </div>
             <div className={styles.imageWrapper}>
