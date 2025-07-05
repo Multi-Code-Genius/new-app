@@ -1128,7 +1128,7 @@
 
 @media (max-width: 768px) {
   .grid {
-    padding: 0 10px;
+    padding: 10px 0px 12px 10px;
     gap: 40px;
     padding-right: 0px;
   }
@@ -1276,6 +1276,7 @@
 .textwrap img {
   transform: scale(1);
 }
+
 .title2 {
   font-size: 32px;
   font-weight: 900;
