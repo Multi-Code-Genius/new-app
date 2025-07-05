@@ -18,7 +18,7 @@ import iconOrange from "../assets/iconOrange.svg";
 import iconBlue from "../assets/iconBlue.svg";
 import iconGreen from "../assets/iconGreen.svg";
 import iconRed from "../assets/iconRed.svg";
-import cardrocket from "../assets/cardrocket.png";
+import cardrocket from "../assets/rocket2.png";
 import uprocket from "../assets/uploadrocket2.png";
 import thumb1 from "../assets/thumb1.png";
 import thumb2 from "../assets/thumb2.png";
@@ -378,8 +378,8 @@ export default function Home() {
                   <img
                     src={cardrocket.src}
                     alt="rocket"
-                    width={31}
-                    height={31}
+                    width={38}
+                    height={33}
                   />
                   <div className={styles.tag}>2 fast 2 furios</div>
                 </div>
@@ -433,8 +433,8 @@ export default function Home() {
                   <img
                     src={cardsettings.src}
                     alt="copy"
-                    width={31}
-                    height={31}
+                    width={24}
+                    height={24}
                   />
                   <div className={styles.tag}>
                     Every setting everywhere at once
@@ -473,7 +473,7 @@ export default function Home() {
             <div className={styles.grid}>
               <div className={styles.card2}>
                 <div className={styles.textwrap}>
-                  <img src={copy.src} alt="copy" width={31} height={31} />
+                  <img src={copy.src} alt="copy" width={24} height={24} />
                   <div className={styles.tag}>Saving private templates</div>
                 </div>
                 <div className={styles.title2}>
@@ -508,7 +508,7 @@ export default function Home() {
               </div>
               <div className={styles.card3}>
                 <div className={styles.textwrap}>
-                  <img src={download.src} alt="rocket" width={31} height={31} />
+                  <img src={download.src} alt="rocket" width={24} height={24} />
                   <div className={styles.tag}>Arrival</div>
                 </div>
                 <div className={styles.title2}>

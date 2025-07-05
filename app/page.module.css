@@ -1270,6 +1270,9 @@
   gap: 5px;
 }
 
+.textwrap img {
+  transform: scale(1);
+}
 .title2 {
   font-size: 32px;
   font-weight: 900;
@@ -1318,7 +1321,7 @@
   margin-top: 20px;
   background: white;
   padding: 16px 20px;
-  border-radius: 20px;
+  border-radius: 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1329,7 +1332,7 @@
   display: flex;
   background: white;
   padding: 16px;
-  border-radius: 20px;
+  border-radius: 34px;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -1437,7 +1440,7 @@
   align-items: center;
   justify-content: space-between;
   background: white;
-  border-radius: 20px;
+  border-radius: 34px;
   padding-left: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   max-width: 500px;
