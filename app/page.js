@@ -32,8 +32,8 @@ import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
-import humberger from "../assets/humberger.png";
 import closeIcon from "../assets/closeIcon.png";
+import mobileHero from "../assets/mobilehero.webp";
 
 const features = [
   {
@@ -163,12 +163,12 @@ export default function Home() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             <div className={styles.menuBtnText}>Menu</div>
-            <img
+            {/* <img
               src={menuOpen ? closeIcon.src : humberger.src}
               width={20}
               height={20}
               alt="humberger"
-            />
+            /> */}
           </button>
 
           <div
@@ -261,48 +261,30 @@ export default function Home() {
           </motion.section>
 
           <div className={styles.textcontainer2}>
+            <img
+              src={mobileHero.src}
+              width={221}
+              height={331}
+              alt="mobilehero"
+              style={{ paddingBottom: 11 }}
+            />
             <div className={styles.heroText}>
               The simplest,
-              <span className={styles.inlineIcon}>
-                <img src={roket.src} alt="rocket" />
-                <br />
-                quickest{" "}
-              </span>
-              bulk ad <br /> uploader{" "}
+              <br />
+              quickest bulk ad <br /> uploader for
+              <br />
+              Meta.
               <span className={`${styles.inlineIcon} ${styles.sparkle}`}>
                 <img src={star.src} alt="sparkles" />
               </span>{" "}
-              for Meta.
             </div>
-            <div className={styles.imageWrapper}>
-              <img
-                alt="video"
-                src={video.src}
-                width={1200}
-                height={900}
-                className={styles.image}
-              />
+            <div className={styles.mobilesubtext}>
+              Launch 100s of ads together. Unlimited Ad Accounts. Save your
+              settings and launch ads in seconds
             </div>
+
             <div className={styles.buttoncontainer}>
-              <div className={styles.button}>Get Started</div>
               <div className={styles.button1}>View Demo</div>
-            </div>
-            <div className={styles.subText}>
-              <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
-                <div className={styles.text}> Launch 100s of ads together</div>
-              </div>
-              <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
-                <div className={styles.text}> Unlimited Ad Accounts</div>
-              </div>
-              <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
-                <div className={styles.text}>
-                  {" "}
-                  Save your settings and launch an ad in seconds
-                </div>
-              </div>
             </div>
           </div>
 
