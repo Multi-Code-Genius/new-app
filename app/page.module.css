@@ -535,6 +535,9 @@
   padding: 0 20px;
   flex-direction: column;
   scroll-margin-top: 120px;
+  @media (max-width: 576px) {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
@@ -560,9 +563,9 @@
   line-height: normal;
   font-family: var(--font-nexa-round), sans-serif;
 
-  @media (max-width: 768px) {
-    padding: 10px 30px;
-  }
+  /* @media (max-width: 576px) {
+    width: 100%;
+  } */
 }
 
 .title1 {
@@ -617,7 +620,6 @@
   font-weight: bold;
   box-shadow: 6px 6px 0 #6c0a77;
   transition: all 0.2s ease;
-  cursor: pointer;
 
   @media (max-width: 768px) {
     place-content: center;
@@ -872,6 +874,7 @@
     justify-content: space-between;
     flex-direction: row;
     margin-bottom: 37px;
+    padding: 10px 30px;
   }
 
   .title1 {

@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import { useEffect, useRef, useState, useCallback } from "react";
 import logo from "../assets/logo.webp";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import roket from "../assets/uploadrocket2.png";
 import star from "../assets/star.png";
 import right from "../assets/Frame.webp";
@@ -18,7 +18,7 @@ import iconOrange from "../assets/iconOrange.svg";
 import iconBlue from "../assets/iconBlue.svg";
 import iconGreen from "../assets/iconGreen.svg";
 import iconRed from "../assets/iconRed.svg";
-import cardrocket from "../assets/rocket2.png";
+import cardrocket from "../assets/tranparentRocket.svg";
 import uprocket from "../assets/uploadrocket2.png";
 import thumb1 from "../assets/thumb1.png";
 import thumb2 from "../assets/thumb2.png";
@@ -73,16 +73,31 @@ export default function Home() {
   const mobileMenuRef = useRef(null);
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
-
+  const [showButton, setShowButton] = useState(true);
   const landingRef = useRef();
   const videoRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 576);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
     }
+    setShowButton(false);
   };
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -300,21 +315,26 @@ export default function Home() {
               muted
               loop
               poster={video.src}
+              style={{
+                opacity: showButton ? 0.4 : 1,
+                transition: "opacity 0.3s ease",
+              }}
             >
               <source src="../videos/sample.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
-            <button onClick={handlePlay} className={styles.overlayButton}>
-              <img
-                src={plus.src}
-                alt="icon"
-                className={styles.icon2}
-                width={50}
-                height={50}
-              />
-              Watch Demo Video
-            </button>
+            {showButton && (
+              <button onClick={handlePlay} className={styles.overlayButton}>
+                <img
+                  src={plus.src}
+                  alt="icon"
+                  className={styles.icon2}
+                  width={50}
+                  height={50}
+                />
+                Watch Demo Video
+              </button>
+            )}
           </div>
 
           <motion.section
@@ -384,8 +404,8 @@ export default function Home() {
                   <img
                     src={cardrocket.src}
                     alt="rocket"
-                    width={38}
-                    height={33}
+                    width={33}
+                    height={31}
                   />
                   <div className={styles.tag}>2 fast 2 furios</div>
                 </div>
@@ -559,9 +579,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.3 : 0.6,
               ease: "easeOut",
-              opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+              opacity: {
+                duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.4,
+              },
             }}
           >
             <div className={styles.badgeTitle}>Built by the best</div>
@@ -592,9 +614,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.3 : 0.6,
               ease: "easeOut",
-              opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+              opacity: {
+                duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.4,
+              },
             }}
             className={styles.wrapper}
           >
