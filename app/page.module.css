@@ -415,15 +415,14 @@
   @media (max-width: 768px) {
     width: 45px;
     height: 45px;
-    transform: scale(1.8);
+    transform: scale(1.7);
   }
 }
 
 .sparkle {
-  img {
-    @media (max-width: 768px) {
-      transform: scale(1.4) !important;
-    }
+  transform: scale(1.4) !important;
+  @media (max-width: 768px) {
+    transform: scale(1.4);
   }
 }
 
@@ -462,11 +461,6 @@
   flex-direction: row;
   gap: 9px;
   align-items: center;
-}
-
-.griditem img {
-  height: 21px;
-  width: 21px;
 }
 
 .text {
@@ -697,6 +691,16 @@
   }
 }
 
+.shadowWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  @media (max-width: 768px) {
+    /* width: 50%; */
+    margin: 0 auto;
+    min-width: 207px;
+  }
+}
 .shadowButton:hover {
   transform: translateY(-2px);
   box-shadow: 8px 8px 0 #49034f;
@@ -1209,6 +1213,13 @@
   gap: 48px;
   width: 100%;
   justify-content: center;
+  @media (max-width: 1160px) {
+    padding-left: 20px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1868,11 +1879,6 @@
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px 15px;
-  }
-
-  .mainGrid {
-    flex-direction: column;
-    gap: 16px;
   }
 
   .feature-box {

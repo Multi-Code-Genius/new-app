@@ -268,7 +268,11 @@ export default function Home() {
             <div className={styles.heroText}>
               The simplest,
               <span className={styles.inlineIcon}>
-                <img src={roket.src} alt="rocket" />
+                <img
+                  src={roket.src}
+                  alt="rocket"
+                  className={styles.herorocket}
+                />
                 quickest
                 <span style={{ marginRight: "5px" }} />
               </span>
@@ -281,15 +285,15 @@ export default function Home() {
             </div>
             <div className={styles.subText}>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
+                <img src={right.src} alt="right" width={24} height={24} />
                 <div className={styles.text}> Launch 100s of ads together</div>
               </div>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
+                <img src={right.src} alt="right" width={24} height={24} />
                 <div className={styles.text}> Unlimited Ad Accounts</div>
               </div>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={21} height={21} />
+                <img src={right.src} alt="right" width={24} height={24} />
                 <div className={styles.text}>
                   {" "}
                   Save your settings and launch an ad in seconds
@@ -421,34 +425,40 @@ export default function Home() {
             </div>
             <div className={styles.buttonGroup}>
               <div className={styles.shadowButton}>
-                <img
-                  src={swap.src}
-                  alt="swap"
-                  width={30}
-                  height={30}
-                  className={styles.myImg}
-                />
-                <span>Easily Swap Ad Accounts</span>
+                <div className={styles.shadowWrapper}>
+                  <img
+                    src={swap.src}
+                    alt="swap"
+                    width={30}
+                    height={30}
+                    className={styles.myImg}
+                  />
+                  <span>Easily Swap Ad Accounts</span>
+                </div>
               </div>
               <div className={styles.shadowButton}>
-                <img
-                  src={settings.src}
-                  alt="settings"
-                  width={30}
-                  height={30}
-                  className={styles.myImg}
-                />
-                <span>Persistent Settings</span>
+                <div className={styles.shadowWrapper}>
+                  <img
+                    src={settings.src}
+                    alt="settings"
+                    width={30}
+                    height={30}
+                    className={styles.myImg}
+                  />
+                  <span>Persistent Settings</span>
+                </div>
               </div>
               <div className={styles.shadowButton}>
-                <img
-                  src={rocket.src}
-                  alt="rocket"
-                  width={30}
-                  height={30}
-                  className={styles.myImg}
-                />
-                <span>Fast launch all creatives</span>
+                <div className={styles.shadowWrapper}>
+                  <img
+                    src={rocket.src}
+                    alt="rocket"
+                    width={30}
+                    height={30}
+                    className={styles.myImg}
+                  />
+                  <span>Fast launch all creatives</span>
+                </div>
               </div>
             </div>
           </motion.section>
