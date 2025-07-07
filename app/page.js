@@ -92,6 +92,8 @@ export default function Home() {
     };
   }, []);
 
+  console.log("ismobile>.>.", isMobile);
+
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
@@ -216,9 +218,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
               ease: "easeOut",
-              opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+              opacity: {
+                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
+              },
             }}
             className={styles.textcontainer}
           >
@@ -579,10 +583,10 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : isMobile ? 0.3 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
               ease: "easeOut",
               opacity: {
-                duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.4,
+                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
               },
             }}
           >
@@ -614,10 +618,10 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : isMobile ? 0.3 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
               ease: "easeOut",
               opacity: {
-                duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.4,
+                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
               },
             }}
             className={styles.wrapper}
