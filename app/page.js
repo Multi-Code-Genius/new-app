@@ -92,8 +92,6 @@ export default function Home() {
     };
   }, []);
 
-  console.log("ismobile>.>.", isMobile);
-
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
@@ -103,7 +101,6 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    console.log("object", landingRef.current);
     const scrollHandler = () => {
       if (landingRef.current) {
         setIsScrolled(landingRef.current.scrollTop > 10);
