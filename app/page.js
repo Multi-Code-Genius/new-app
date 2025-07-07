@@ -73,9 +73,11 @@ export default function Home() {
   const mobileMenuRef = useRef(null);
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
-  const [showButton, setShowButton] = useState(true);
   const landingRef = useRef();
-  const videoRef = useRef(null);
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+  const [showButton1, setShowButton1] = useState(true);
+  const [showButton2, setShowButton2] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -92,12 +94,52 @@ export default function Home() {
     };
   }, []);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
+  const handlePlay1 = () => {
+    if (videoRef1.current) {
+      videoRef1.current
+        .play()
+        .catch((err) => console.error("Play failed", err));
     }
-    setShowButton(false);
+    setShowButton1(false);
   };
+
+  const handlePlay2 = () => {
+    if (videoRef2.current) {
+      videoRef2.current
+        .play()
+        .catch((err) => console.error("Play failed", err));
+    }
+    setShowButton2(false);
+  };
+  useEffect(() => {
+    const video = videoRef1.current;
+    if (!video) return;
+
+    const handlePlay = () => {
+      setShowButton1(false);
+    };
+
+    video.addEventListener("play", handlePlay);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+    };
+  }, []);
+  useEffect(() => {
+    const video = videoRef2.current;
+    if (!video) return;
+
+    const handlePlay = () => {
+      setShowButton2(false);
+    };
+
+    video.addEventListener("play", handlePlay);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+    };
+  }, []);
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -286,11 +328,42 @@ export default function Home() {
             <div className={styles.buttoncontainer}>
               <div className={styles.button1}>View Demo</div>
             </div>
+            <div className={styles.imageWrapper}>
+              <video
+                ref={videoRef1}
+                className={styles.image}
+                width={1200}
+                height={900}
+                controls
+                muted
+                loop
+                poster={video.src}
+                style={{
+                  opacity: showButton1 ? 0.4 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                <source src="../videos/sample.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {showButton1 && (
+                <button onClick={handlePlay1} className={styles.overlayButton}>
+                  <img
+                    src={plus.src}
+                    alt="icon"
+                    className={styles.icon2}
+                    width={24}
+                    height={24}
+                  />
+                  Watch Demo Video
+                </button>
+              )}
+            </div>
           </div>
 
           <div className={styles.imageWrapper1}>
             <video
-              ref={videoRef}
+              ref={videoRef2}
               className={styles.image}
               width={1200}
               height={900}
@@ -299,15 +372,15 @@ export default function Home() {
               loop
               poster={video.src}
               style={{
-                opacity: showButton ? 0.4 : 1,
+                opacity: showButton2 ? 0.4 : 1,
                 transition: "opacity 0.3s ease",
               }}
             >
               <source src="../videos/sample.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            {showButton && (
-              <button onClick={handlePlay} className={styles.overlayButton}>
+            {showButton2 && (
+              <button onClick={handlePlay2} className={styles.overlayButton}>
                 <img
                   src={plus.src}
                   alt="icon"
@@ -383,23 +456,26 @@ export default function Home() {
           <div className={styles.mainGrid}>
             <div className={styles.grid}>
               <div className={styles.card}>
-                <div className={styles.textwrap}>
-                  <img
-                    src={cardrocket.src}
-                    alt="rocket"
-                    width={33}
-                    height={31}
-                  />
-                  <div className={styles.tag}>2 fast 2 furios</div>
+                <div className={styles.cardcontainer}>
+                  <div className={styles.textwrap}>
+                    <img
+                      src={cardrocket.src}
+                      alt="rocket"
+                      width={33}
+                      height={31}
+                    />
+                    <div className={styles.tag}>2 fast 2 furios</div>
+                  </div>
+                  <div className={styles.title2}>
+                    Upload multiple creatives at once
+                  </div>
+                  <div className={styles.cardDes}>
+                    Automate your ad creation flow with lightning-fast bulk
+                    uploads, saved settings, and ad previews — all in one clean
+                    dashboard.
+                  </div>
                 </div>
-                <div className={styles.title2}>
-                  Upload multiple creatives at once
-                </div>
-                <div className={styles.cardDes}>
-                  Automate your ad creation flow with lightning-fast bulk
-                  uploads, saved settings, and ad previews — all in one clean
-                  dashboard.
-                </div>
+
                 <div className={styles.uploadContainer}>
                   <div className={styles.contentWrap}>
                     <div className={styles.uploadHeader}>
@@ -478,8 +554,89 @@ export default function Home() {
                   <div className={styles.addbutton1}>save settings</div>
                 </div>
               </div>
+              <div className={styles.mobilecard2}>
+                <div>
+                  <div className={styles.textwrap}>
+                    <img src={copy.src} alt="copy" width={24} height={24} />
+                    <div className={styles.tag}>Saving private templates</div>
+                  </div>
+                  <div className={styles.title2}>
+                    Apply saved templates for copy, CTA, and links
+                  </div>
+                  <div className={styles.cardDes}>
+                    Stop wasting time in Meta Ads Manager's clunky interface.
+                    Simply select your ideal settings once. We take care of the
+                    rest.
+                  </div>
+                </div>
+
+                <div className={styles.gridwrap}>
+                  <div className={styles.gridcontainer}>
+                    <img src={dwimg.src} alt="rocket" width={15} height={15} />
+                    <div className={styles.point}>
+                      Import recently used copy from Meta
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={copimg.src} alt="rocket" width={15} height={15} />
+                    <div className={styles.point}>
+                      Save Variations of Primary Text and Headlines
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <img src={image.src} alt="rocket" width={15} height={15} />
+                    <div className={styles.point}>
+                      Making ads using new template
+                    </div>
+                  </div>
+                  <div className={styles.addbutton}>+ Add New Template</div>
+                </div>
+              </div>
             </div>
             <div className={styles.grid}>
+              <div className={styles.mobilecard4}>
+                <div>
+                  <div className={styles.textwrap}>
+                    <img
+                      src={cardsettings.src}
+                      alt="copy"
+                      width={24}
+                      height={24}
+                    />
+                    <div className={styles.tag}>
+                      Every setting everywhere at once
+                    </div>
+                  </div>
+                  <div className={styles.title2}>
+                    Persistent Settings Per Ad Account
+                  </div>
+                  <div className={styles.cardDes}>
+                    UTMs, page selections, ad name formulas, all saved, per ad
+                    account, so nothing resets on reload.
+                  </div>
+                </div>
+                <div className={styles.gridwrap1}>
+                  <div className={styles.gridcontainer}>
+                    <div className={styles.stepbadge}>1</div>
+                    <div className={styles.point}>
+                      Toggle all Meta Creative Enhancements
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <div className={styles.stepbadge}>2</div>
+                    <div className={styles.point}>
+                      Default CTA, Links and UTMs
+                    </div>
+                  </div>
+                  <div className={styles.gridcontainer}>
+                    <div className={styles.stepbadge}>3</div>
+                    <div className={styles.point}>
+                      Custom Ad Naming Conventions
+                    </div>
+                  </div>
+                  <div className={styles.addbutton1}>save settings</div>
+                </div>
+              </div>
               <div className={styles.card2}>
                 <div className={styles.textwrap}>
                   <img src={copy.src} alt="copy" width={24} height={24} />
@@ -503,37 +660,46 @@ export default function Home() {
                   <div className={styles.gridcontainer}>
                     <img src={copimg.src} alt="rocket" width={20} height={20} />
                     <div className={styles.point}>
-                      Import recently used copy from Meta
+                      Save Variations of Primary Text and Headlines
                     </div>
                   </div>
                   <div className={styles.gridcontainer}>
                     <img src={image.src} alt="rocket" width={20} height={20} />
                     <div className={styles.point}>
-                      Import recently used copy from Meta
+                      Making ads using new template
                     </div>
                   </div>
                   <div className={styles.addbutton}>+ Add New Template</div>
                 </div>
               </div>
               <div className={styles.card3}>
-                <div className={styles.textwrap}>
-                  <img src={download.src} alt="rocket" width={24} height={24} />
-                  <div className={styles.tag}>Arrival</div>
+                <div>
+                  <div className={styles.textwrap}>
+                    <img
+                      src={download.src}
+                      alt="rocket"
+                      width={24}
+                      height={24}
+                    />
+                    <div className={styles.tag}>Arrival</div>
+                  </div>
+                  <div className={styles.title2}>
+                    No more upload, download hell.
+                  </div>
+                  <div className={styles.cardDes}>
+                    No need to spend hours downloading hundreds of ad assets.
+                    With Blip, you can one-click deploy media from your Drive to
+                    Meta Ads Manager.
+                  </div>
                 </div>
-                <div className={styles.title2}>
-                  No more upload, download hell.
-                </div>
-                <div className={styles.cardDes}>
-                  No need to spend hours downloading hundreds of ad assets. With
-                  Blip, you can one-click deploy media from your Drive to Meta
-                  Ads Manager.
-                </div>
+
                 <div className={styles.uploadContainer1}>
                   <div className={styles.uploadIconWrap1}>
                     <img
                       src={driveIcon.src}
                       alt="Drive"
-                      width={56}
+                      className={styles.drive}
+                      width={50}
                       height={50}
                     />
                   </div>
@@ -548,6 +714,7 @@ export default function Home() {
                       alt="Rocket"
                       width={110}
                       height={110}
+                      className={styles.rocket}
                     />
                   </div>
                 </div>
@@ -574,11 +741,11 @@ export default function Home() {
               Blip has been built by people with over 10 years of experience
               launching ads
             </h2>
-            <p className={`${styles.subtitle} ${styles.nosubtitle}`}>
+            <div className={`${styles.subtitle} ${styles.nosubtitle}`}>
               The team behind blip has managed over 10mil in ad spend. <br />
               The experience has been tailored to the absolute essentials which
               will improve your quality of life.
-            </p>
+            </div>
             <div className={styles.featuresGrid}>
               {features.map((feature, index) => (
                 <div key={index} className={styles.featureItem}>
@@ -610,15 +777,15 @@ export default function Home() {
                 <div className={styles.badge}>
                   1 Flat Price. Unlimited Ad Accounts
                 </div>
-                <h2 className={styles.price1}>Pricing</h2>
-                <p className={styles.description}>
+                <div className={styles.price1}>Pricing</div>
+                <div className={styles.description}>
                   UTMs, page selections, ad name formulas — all saved, per ad
                   account, so nothing resets on reload.
-                </p>
+                </div>
                 <button className={styles.ctaBtn}>Start Posting Ads</button>
-                <p className={styles.teamNote}>
+                <div className={styles.teamNote}>
                   have a lot of people on your team?
-                </p>
+                </div>
                 <p className={styles.teamComing}>Team seats Coming Soon</p>
               </div>
 
