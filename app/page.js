@@ -610,19 +610,19 @@ export default function Home() {
 
                 <div className={styles.gridwrap}>
                   <div className={styles.gridcontainer}>
-                    <img src={dwimg.src} alt="rocket" width={15} height={15} />
+                    <img src={dwimg.src} alt="rocket" width={18} height={18} />
                     <div className={styles.point}>
                       Import recently used copy from Meta
                     </div>
                   </div>
                   <div className={styles.gridcontainer}>
-                    <img src={copimg.src} alt="rocket" width={15} height={15} />
+                    <img src={copimg.src} alt="rocket" width={18} height={18} />
                     <div className={styles.point}>
                       Save Variations of Primary Text and Headlines
                     </div>
                   </div>
                   <div className={styles.gridcontainer}>
-                    <img src={image.src} alt="rocket" width={15} height={15} />
+                    <img src={image.src} alt="rocket" width={18} height={18} />
                     <div className={styles.point}>
                       Making ads using new template
                     </div>
