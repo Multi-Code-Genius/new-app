@@ -517,8 +517,8 @@ export default function Home() {
                       <img
                         src={uprocket.src}
                         alt="rocket"
-                        width={32}
-                        height={32}
+                        width={45}
+                        height={45}
                       />
                       <div className={styles.subheadspan}>
                         <strong>30 Files uploaded</strong>
@@ -822,9 +822,6 @@ export default function Home() {
             transition={{
               duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              // opacity: {
-              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              // },
             }}
             className={styles.wrapper}
           >
