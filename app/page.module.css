@@ -400,15 +400,14 @@
 }
 
 .inlineIcon {
-  /* display: inline-flex; */
   align-items: center;
   gap: 8px;
   vertical-align: baseline;
 }
 
 .inlineIcon img {
-  width: 100px;
-  height: 100px;
+  width: 83px;
+  height: 83px;
   transform: scale(2);
   display: inline-block;
   vertical-align: middle;
