@@ -879,6 +879,7 @@
 .icon img {
   width: 24px;
   height: 24px;
+  filter: brightness(0.9);
 }
 
 .groupText {
@@ -1056,13 +1057,14 @@
 }
 
 .iconBox {
+  position: relative; /* <-- Add this line */
   width: 45.66px;
   height: 46.23px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.4;
+  /* opacity: 0.6; */
   flex-shrink: 0;
   border: 1px solid;
   box-shadow: 0px 2px 10px;
@@ -1074,41 +1076,74 @@
   height: 24px;
   filter: brightness(1);
 }
+.activeToggle::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  width: 5px;
+  height: 5px;
+  background-color: #ed9b37;
+  border-radius: 50%;
+}
 
 .iconPink {
-  background-image: linear-gradient(to bottom, #eb69f9 1%, #facbff 99%);
-  border: 1px solid #7f0f91;
-  box-shadow: 0px 2px 10px #ea65ff;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(235, 105, 249, 0.4) 1%,
+    rgba(250, 203, 255, 0.4) 99%
+  );
+  border: 1px solid rgba(127, 15, 145, 0.2);
+  box-shadow: 0px 2px 10px rgba(234, 101, 255, 0.4);
 }
 
 .iconPurple {
-  background: linear-gradient(180deg, #7069f9 0%, #cbdaff 100%);
-  border: 1px solid #0f1c91;
-  box-shadow: 0px 2px 10px #6581ff;
+  background: linear-gradient(
+    180deg,
+    rgba(112, 105, 249, 0.4) 0%,
+    rgba(203, 218, 255, 0.4) 100%
+  );
+  border: 1px solid rgba(15, 28, 145, 0.2);
+  box-shadow: 0px 2px 10px rgba(101, 129, 255, 0.4);
 }
 
 .iconOrange {
-  background: linear-gradient(180deg, #f9cc69 0%, #ffe8cb 100%);
-  border: 1px solid #fbaa1e;
-  box-shadow: 0px 2px 10px #ffc965;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 204, 105, 0.4) 0%,
+    rgba(255, 232, 203, 0.4) 100%
+  );
+  border: 1px solid rgba(237, 155, 55, 0.2);
+  box-shadow: 0px 2px 10px rgba(255, 201, 101, 0.4);
 }
 
 .iconBlue {
-  background: linear-gradient(180deg, #69e4f9 0%, #cbfdff 100%);
-  border: 1px solid #0f7b91;
-  box-shadow: 0px 2px 10px #65ceff;
+  background: linear-gradient(
+    180deg,
+    rgba(105, 228, 249, 0.4) 0%,
+    rgba(203, 253, 255, 0.4) 100%
+  );
+  border: 1px solid rgba(15, 123, 145, 0.2);
+  box-shadow: 0px 2px 10px rgba(101, 206, 255, 0.4);
 }
 
 .iconGreen {
-  background: linear-gradient(180deg, #69f97c 0%, #cbffdc 100%);
-  border: 1px solid #05f21c;
-  box-shadow: 0px 2px 10px #65ff86;
+  background: linear-gradient(
+    180deg,
+    rgba(105, 249, 124, 0.4) 0%,
+    rgba(203, 255, 220, 0.4) 100%
+  );
+  border: 1px solid rgba(5, 242, 28, 0.2);
+  box-shadow: 0px 2px 10px rgba(101, 255, 134, 0.4);
 }
 
 .iconRed {
-  background: linear-gradient(180deg, #f96969 0%, #ffcbcc 100%);
-  border: 1px solid #fb1e22;
-  box-shadow: 0px 2px 10px #ff6567;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 105, 105, 0.4) 0%,
+    rgba(255, 203, 204, 0.4) 100%
+  );
+  border: 1px solid rgba(251, 30, 34, 0.2);
+  box-shadow: 0px 2px 10px rgba(255, 101, 103, 0.4);
 }
 
 .featureText {
@@ -1236,7 +1271,7 @@
   background: #ff9a9c;
   border-radius: 34px;
   padding: 25px 32px 29px 21px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1253,7 +1288,7 @@
   right: 11px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1285,7 +1320,7 @@
   background: #ff9a9c;
   border-radius: 34px;
   padding: 28px 38px 21px 20px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1299,7 +1334,7 @@
   width: 100%;
   background: #ff9a9c;
   border-radius: 34px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: none;
   flex-direction: column;
   position: relative;
@@ -1319,7 +1354,7 @@
   right: 12px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1333,7 +1368,7 @@
   right: 12px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1346,7 +1381,7 @@
   background: #ff9a9c;
   border-radius: 34px;
   padding: 28px 32px 22px 28px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1365,7 +1400,7 @@
   right: 12px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1378,7 +1413,7 @@
   background: #ff9a9c;
   border-radius: 34px;
   padding: 33px 38px 24px 26px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1392,7 +1427,7 @@
   width: 100%;
   background: #ff9a9c;
   border-radius: 34px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   display: none;
   flex-direction: column;
   position: relative;
@@ -1412,7 +1447,7 @@
   right: 12px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1426,7 +1461,7 @@
   right: 12px;
   width: 100%;
   height: 100%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   background: #fdf5e4;
   border-radius: 34px;
   z-index: -1;
@@ -1581,10 +1616,10 @@
 .uploadHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 3.6px;
   font-size: 16px;
   color: #573b03;
-  font-weight: 600;
+  font-weight: bold;
   font-family: var(--font-nexa-round), sans-serif;
   @media (max-width: 576px) {
     font-size: 12px;
@@ -1592,6 +1627,32 @@
   }
 }
 
+.subheadspan {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+@media (max-width: 576px) {
+  .subheadspan {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.subhead {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--font-nexa-round), sans-serif;
+  color: #000;
+  opacity: 0.5;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
 .uploadHeader strong {
   font-weight: 700;
   margin-right: 4px;
@@ -1749,11 +1810,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-}
-
-.feature-icon img {
-  width: 24px;
-  height: 24px;
 }
 
 .feature-title {

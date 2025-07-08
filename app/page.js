@@ -32,7 +32,6 @@ import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
 import logonew from "../assets/logo3.png";
-import closeIcon from "../assets/closeIcon.png";
 import mobileHero from "../assets/mobilehero.webp";
 
 const features = [
@@ -492,12 +491,13 @@ export default function Home() {
                       <img
                         src={uprocket.src}
                         alt="rocket"
-                        width={50}
-                        height={50}
+                        width={32}
+                        height={32}
                       />
-                      <span>
-                        <strong>30 Files uploaded</strong> to a new adset
-                      </span>
+                      <div className={styles.subheadspan}>
+                        <strong>30 Files uploaded</strong>
+                        <div className={styles.subhead}>to a new adset</div>
+                      </div>
                     </div>
                     <div className={styles.progressBar}>
                       <div className={styles.progressBarFill}></div>
@@ -759,9 +759,17 @@ export default function Home() {
             <div className={styles.featuresGrid}>
               {features.map((feature, index) => (
                 <div key={index} className={styles.featureItem}>
-                  <div className={`${styles.iconBox} ${feature.iconClass}`}>
-                    <img src={feature.icon} alt={feature.title} />
-                  </div>
+                  {feature.title === "Launch Ads Turned off" ? (
+                    <div
+                      className={`${styles.iconBox} ${styles.activeToggle} ${feature.iconClass}`}
+                    >
+                      <img src={iconOrange.src} alt="toggle" />
+                    </div>
+                  ) : (
+                    <div className={`${styles.iconBox} ${feature.iconClass}`}>
+                      <img src={feature.icon} alt={feature.title} />
+                    </div>
+                  )}
                   <p className={styles.featureText}>{feature.title}</p>
                 </div>
               ))}
