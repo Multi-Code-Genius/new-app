@@ -317,13 +317,14 @@ export default function Home() {
           <motion.section
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+              margin: isMobile ? "0px" : "-100px",
+            }}
             transition={{
               duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              // opacity: {
-              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              // },
             }}
             className={styles.textcontainer2}
           >
@@ -421,7 +422,11 @@ export default function Home() {
             id="about"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+              margin: isMobile ? "0px" : "-100px",
+            }}
             transition={{
               duration: shouldReduceMotion ? 0 : 0.7,
               ease: "easeOut",
@@ -762,7 +767,11 @@ export default function Home() {
             id="features"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+              margin: isMobile ? "0px" : "-100px",
+            }}
             transition={{
               duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
@@ -805,7 +814,11 @@ export default function Home() {
             id="pricing"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+              margin: isMobile ? "0px" : "-100px",
+            }}
             transition={{
               duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
