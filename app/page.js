@@ -188,81 +188,90 @@ export default function Home() {
   return (
     <>
       <div className={styles.landing} ref={landingRef}>
-        <div className={styles.logoWrapper}>
-          <img
-            src={logo.src}
-            alt="logo"
-            width={48}
-            height={48}
-            className={styles.blipLogo}
-          />
-          <span className={styles.brandText}>Blip</span>
-        </div>
-
-        <header className={styles.header}>
-          <div className={styles.brand}>
-            <img
-              src={logo.src}
-              alt="logo"
-              width={32}
-              height={32}
-              className={styles.blipLogo}
-            />
-            <span className={styles.brandText}>Blip</span>
-          </div>
-          <button
-            className={styles.menuBtn}
-            ref={menuBtnRef}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <div className={styles.menuBtnText}>Menu</div>
-            {/* <img
-              src={menuOpen ? closeIcon.src : humberger.src}
-              width={20}
-              height={20}
-              alt="humberger"
-            /> */}
-          </button>
-
-          <div
-            ref={mobileMenuRef}
-            className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
-          >
-            <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
-              about
-            </a>
-            <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")}>
-              pricing
-            </a>
-            <a href="#features" onClick={(e) => scrollToSection(e, "features")}>
-              features
-            </a>
-            <button
-              className={styles.startBtn}
-              onClick={() => setMenuOpen(false)}
-            >
-              Start Now
-            </button>
-          </div>
-          <nav
-            className={`${styles.navLinks} ${
-              isScrolled ? styles.scrolled : ""
-            }`}
-          >
-            <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
-              about
-            </a>
-            <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")}>
-              pricing
-            </a>
-            <a href="#features" onClick={(e) => scrollToSection(e, "features")}>
-              features
-            </a>
-            <button className={styles.startBtn}>Start Now</button>
-          </nav>
-        </header>
-
         <div className={styles.container}>
+          <div>
+            <div className={styles.logoWrapper}>
+              <img
+                src={logo.src}
+                alt="logo"
+                width={48}
+                height={48}
+                className={styles.blipLogo}
+              />
+              <span className={styles.brandText}>Blip</span>
+            </div>
+            <header className={styles.header}>
+              <div className={styles.brand}>
+                <img
+                  src={logo.src}
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className={styles.blipLogo}
+                />
+                <span className={styles.brandText}>Blip</span>
+              </div>
+              <button
+                className={styles.menuBtn}
+                ref={menuBtnRef}
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <div className={styles.menuBtnText}>Menu</div>
+              </button>
+
+              <div
+                ref={mobileMenuRef}
+                className={`${styles.mobileMenu} ${
+                  menuOpen ? styles.open : ""
+                }`}
+              >
+                <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
+                  about
+                </a>
+                <a
+                  href="#pricing"
+                  onClick={(e) => scrollToSection(e, "pricing")}
+                >
+                  pricing
+                </a>
+                <a
+                  href="#features"
+                  onClick={(e) => scrollToSection(e, "features")}
+                >
+                  features
+                </a>
+                <button
+                  className={styles.startBtn}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Start Now
+                </button>
+              </div>
+              <nav
+                className={`${styles.navLinks} ${
+                  isScrolled ? styles.scrolled : ""
+                }`}
+              >
+                <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
+                  about
+                </a>
+                <a
+                  href="#pricing"
+                  onClick={(e) => scrollToSection(e, "pricing")}
+                >
+                  pricing
+                </a>
+                <a
+                  href="#features"
+                  onClick={(e) => scrollToSection(e, "features")}
+                >
+                  features
+                </a>
+                <button className={styles.startBtn}>Start Now</button>
+              </nav>
+            </header>
+          </div>
+
           <motion.section
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
