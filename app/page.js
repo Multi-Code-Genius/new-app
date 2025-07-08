@@ -480,7 +480,7 @@ export default function Home() {
                     alt="rocket"
                     width={30}
                     height={30}
-                    className={styles.myImg}
+                    className={styles.rocketIcon}
                   />
                   <span>Fast launch all creatives</span>
                 </div>
