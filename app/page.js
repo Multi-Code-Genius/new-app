@@ -296,15 +296,15 @@ export default function Home() {
             </div>
             <div className={styles.subText}>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={24} height={24} />
+                <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}> Launch 100s of ads together</div>
               </div>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={24} height={24} />
+                <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}> Unlimited Ad Accounts</div>
               </div>
               <div className={styles.griditem}>
-                <img src={right.src} alt="right" width={24} height={24} />
+                <img src={right.src} alt="right" width={21} height={21} />
                 <div className={styles.text}>
                   {" "}
                   Save your settings and launch an ad in seconds
@@ -317,7 +317,19 @@ export default function Home() {
             </div>
           </motion.section>
 
-          <div className={styles.textcontainer2}>
+          <motion.section
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            transition={{
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
+              ease: "easeOut",
+              // opacity: {
+              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
+              // },
+            }}
+            className={styles.textcontainer2}
+          >
             <img
               src={mobileHero.src}
               width={221}
@@ -374,7 +386,7 @@ export default function Home() {
                 </button>
               )}
             </div>
-          </div>
+          </motion.section>
 
           <div className={styles.imageWrapper1}>
             <video
