@@ -53,6 +53,9 @@
   font-weight: 500;
   font-family: var(--font-nexa-round), sans-serif;
   text-decoration: none;
+  @media (max-width: 678px) {
+    font-size: 14px;
+  }
 }
 
 .leftTop {
@@ -70,6 +73,9 @@
   &:hover {
     text-decoration: underline;
   }
+  @media (max-width: 678px) {
+    font-size: 14px;
+  }
 }
 .blipLogo {
   border-radius: 8px;
@@ -80,20 +86,27 @@
   font-size: 16px;
   font-weight: 500;
   text-align: right;
-  line-height: 1.4;
+  line-height: 1.5;
   font-family: var(--font-nexa-round), sans-serif;
   max-width: 490px;
+  letter-spacing: 1px;
 
   a {
     color: #fff;
     text-decoration: underline;
     font-size: 16px;
     font-weight: 400;
+    @media (max-width: 678px) {
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 768px) {
     text-align: unset;
     max-width: unset;
+  }
+  @media (max-width: 678px) {
+    font-size: 14px;
   }
 }
 
@@ -106,6 +119,9 @@
 
   @media (max-width: 768px) {
     align-items: unset;
+  }
+  @media (max-width: 678px) {
+    font-size: 14px;
   }
 }
 
@@ -327,8 +343,9 @@
     align-items: unset;
     gap: 24px;
   }
-  @media (max-width: 576px) {
-    display: none;
+  @media (max-width: 678px) {
+    padding: 30px;
+    gap: 20px;
   }
 }
 
@@ -1676,7 +1693,7 @@
 .uploadHeader {
   display: flex;
   align-items: center;
-  gap: 3.6px;
+  /* gap: 3.6px; */
   font-size: 16px;
   color: #573b03;
   font-weight: bold;
@@ -1692,7 +1709,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 4px;
+  /* gap: 4px; */
 }
 
 @media (max-width: 576px) {
