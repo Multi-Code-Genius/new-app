@@ -782,9 +782,6 @@ export default function Home() {
             transition={{
               duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              // opacity: {
-              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              // },
             }}
           >
             <div className={styles.badgeTitle}>Built by the best</div>

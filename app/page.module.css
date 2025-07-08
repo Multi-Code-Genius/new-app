@@ -743,9 +743,9 @@
   @media (max-width: 768px) {
     padding: 0;
   }
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     padding-bottom: 100px;
-  }
+  } */
 }
 
 .nopadding {
