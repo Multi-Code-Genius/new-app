@@ -587,8 +587,7 @@
 
   @media (max-width: 768px) {
     padding: 13.5px 49.8px 13.5px 49.8px;
-    max-width: 276px;
-    width: 100%;
+    width: 85%;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.32px;
@@ -1599,6 +1598,7 @@
   @media (max-width: 534px) {
     max-width: 100%;
     width: 100%;
+    gap: 0;
   }
 }
 
@@ -1634,7 +1634,7 @@
   justify-content: space-between;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   @media (max-width: 576px) {
-    padding: 15px 0px 17px 9px;
+    padding: 9px 0px 10px 0px;
     border-radius: 20px;
   }
 }
@@ -1773,6 +1773,8 @@
   }
   @media (max-width: 576px) {
     height: 12px;
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -1802,7 +1804,8 @@
   border-radius: 12px;
   object-fit: cover;
   @media (max-width: 576px) {
-    height: 95px;
+    height: 57px;
+    width: 75px;
   }
 }
 
@@ -2074,7 +2077,7 @@
   }
 
   .card {
-    padding: 29px 24px 26px 13px;
+    padding: 29px 24px 26px 6px;
   }
 
   .card2 {
