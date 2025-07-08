@@ -439,7 +439,6 @@ export default function Home() {
             transition={{
               duration: shouldReduceMotion ? 0 : 0.7,
               ease: "easeOut",
-              // opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
             }}
             className={`${styles.content} ${styles.nopadding}`}
           >
@@ -757,12 +756,12 @@ export default function Home() {
                       <div className={styles.progressBarFill1}></div>
                     </div>
                   </div>
-                  <div>
+                  <div lassName={styles.uploadIconWrap1}>
                     <img
-                      src={logonew.src}
+                      src={logo.src}
                       alt="Rocket"
-                      width={110}
-                      height={110}
+                      width={92}
+                      height={92}
                       className={styles.rocket}
                     />
                   </div>
