@@ -66,6 +66,10 @@
   font-weight: 500;
   font-family: var(--font-nexa-round), sans-serif;
   cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .blipLogo {
   border-radius: 8px;

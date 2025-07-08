@@ -596,7 +596,7 @@ export default function Home() {
                       Custom Ad Naming Conventions
                     </div>
                   </div>
-                  <div className={styles.addbutton1}>save settings</div>
+                  <div className={styles.addbutton1}>Save Settings</div>
                 </div>
               </div>
               <div className={styles.mobilecard2}>
@@ -900,8 +900,18 @@ export default function Home() {
               </a>
             </div>
             <div className={styles.footerRight}>
-              <div className={styles.footerPolicies}>Privacy Policy</div>
-              <div className={styles.footerPolicies}>Terms of Service</div>
+              <a
+                href="https://www.withblip.com/privacy-policy"
+                className={styles.footerPolicies}
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://www.withblip.com/terms-of-service"
+                className={styles.footerPolicies}
+              >
+                Terms of Service
+              </a>
               <div className={styles.footerPoliciesNew}>
                 Blip use and transfer of information received from Google APIs
                 to any other app will adhere to{" "}
