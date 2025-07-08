@@ -31,8 +31,7 @@ import dwimg from "../assets/download.svg";
 import copimg from "../assets/copy.svg";
 import image from "../assets/pic.svg";
 import driveIcon from "../assets/googledrive.png";
-import logonew from "../assets/logo3.png";
-import mobileHero from "../assets/mobilehero.webp";
+import mobileHero from "../assets/mobilehero1.webp";
 
 const features = [
   {
