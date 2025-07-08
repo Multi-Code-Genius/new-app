@@ -120,7 +120,6 @@
 .brand {
   display: none;
   align-items: center;
-
   z-index: 1000;
 }
 
@@ -278,7 +277,7 @@
     display: flex;
     align-items: center;
     z-index: 1000;
-    gap: 6px;
+    gap: 3px;
   }
 
   .logo {
@@ -566,11 +565,14 @@
   white-space: nowrap;
   border: solid 1px #2500f7;
   font-family: var(--font-nexa-round);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media (max-width: 768px) {
     padding: 13.5px 49.8px 13.5px 49.8px;
     max-width: 276px;
     width: 100%;
-    justify-content: center;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.32px;
