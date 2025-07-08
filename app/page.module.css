@@ -587,13 +587,12 @@
 
   @media (max-width: 768px) {
     padding: 13.5px 49.8px 13.5px 49.8px;
-    width: 65%;
+    width: 50%;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.32px;
   }
   @media (max-width: 350px) {
-    width: 65%;
     padding: 10px 20px;
   }
 }
