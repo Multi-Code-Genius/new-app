@@ -54,6 +54,7 @@
   font-size: 16px;
   font-weight: 500;
   font-family: var(--font-nexa-round), sans-serif;
+  text-decoration: none;
 }
 
 .leftTop {
@@ -68,6 +69,9 @@
   font-family: var(--font-nexa-round), sans-serif;
   cursor: pointer;
 }
+.blipLogo {
+  border-radius: 8px;
+}
 
 .footerPoliciesNew {
   color: #b0b0b0;
@@ -78,7 +82,7 @@
   font-family: var(--font-nexa-round), sans-serif;
   max-width: 490px;
 
-  span {
+  a {
     color: #fff;
     text-decoration: underline;
     font-size: 16px;
@@ -1282,6 +1286,10 @@
   @media (max-width: 768px) {
     justify-content: space-between;
   }
+  @media (max-width: 992px) and (min-width: 768px) {
+    padding: 25px 30px 30px 10px;
+    justify-content: space-between;
+  }
 }
 
 .card::after {
@@ -1310,7 +1318,7 @@
   font-weight: bold;
   color: #d4145a;
   background-color: white;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     width: 24px;
     height: 24px;
     font-size: 12px;
@@ -1330,6 +1338,10 @@
   z-index: 1;
   @media (max-width: 768px) {
     display: none;
+  }
+  @media (max-width: 992px) and (min-width: 768px) {
+    padding: 25px 35px 30px 15px;
+    justify-content: space-between;
   }
 }
 
@@ -1394,6 +1406,11 @@
     padding: 29px 31px 26px 10px;
     justify-content: space-between;
   }
+  @media (max-width: 992px) and (min-width: 768px) {
+    padding: 35px 32px 40px 10px;
+    justify-content: space-between;
+    height: 434px;
+  }
 }
 
 .card3::after {
@@ -1423,6 +1440,11 @@
   z-index: 1;
   @media (max-width: 768px) {
     display: none;
+  }
+  @media (max-width: 992px) and (min-width: 768px) {
+    padding: 35px 38px 35px 10px;
+
+    justify-content: space-between;
   }
 }
 
@@ -1476,12 +1498,20 @@
   font-size: 24px;
   font-weight: 900;
   color: #573b03;
+
+  @media (max-width: 992px) and (min-width: 768px) {
+    line-height: 1;
+    font-size: 20px;
+  }
 }
 
 .textwrap {
   display: flex;
   flex-direction: "row";
   gap: 5px;
+  @media (max-width: 992px) and (min-width: 768px) {
+    align-items: center;
+  }
 }
 
 .textwrap img {
@@ -1497,6 +1527,9 @@
   padding-top: 8px;
   max-width: 415px;
   width: 100%;
+  @media (max-width: 992px) and (min-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .cardDes {
@@ -1508,6 +1541,9 @@
   max-width: 466px;
   width: 100%;
   padding-top: 17px;
+  @media (max-width: 992px) and (min-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .contentWrap {
@@ -1532,6 +1568,10 @@
   flex-direction: column;
   gap: 9px;
   margin-top: 51px;
+  @media (max-width: 992px) and (min-width: 768px) {
+    gap: 12px;
+    margin-top: 0;
+  }
 }
 
 .cardcontainer {
@@ -1562,7 +1602,7 @@
   justify-content: space-between;
   gap: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     padding: 7px 10px;
     gap: 11px;
   }
@@ -1581,7 +1621,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     padding: 6px 0px;
     font-size: 14px;
   }
@@ -1604,6 +1644,9 @@
 
     font-size: 14px;
   }
+  @media (max-width: 992px) and (min-width: 768px) {
+    padding: 10px 0px;
+  }
 }
 
 .point {
@@ -1613,6 +1656,9 @@
   width: 100%;
   @media (max-width: 768px) {
     font-size: 12px;
+  }
+  @media (max-width: 992px) and (min-width: 768px) {
+    font-size: 14px;
   }
 }
 
@@ -1674,6 +1720,12 @@
   border-radius: 999px;
   overflow: hidden;
   position: relative;
+  @media (max-width: 992px) and (min-width: 768px) {
+    height: 16px;
+  }
+  @media (max-width: 768px) {
+    height: 20px;
+  }
   @media (max-width: 576px) {
     height: 12px;
   }
@@ -1746,6 +1798,10 @@
     max-width: 100%;
     border-radius: 20px;
   }
+  @media (max-width: 992px) and (min-width: 768px) {
+    max-width: 100%;
+    border-radius: 20px;
+  }
 }
 
 .uploadIconWrap1 {
@@ -1761,9 +1817,25 @@
     width: 54px;
     height: 54px;
   }
+  @media (max-width: 992px) and (min-width: 768px) {
+    width: 54px;
+    height: 54px;
+  }
 }
 
 @media (max-width: 768px) {
+  .drive {
+    width: 33.8px;
+    height: 30.2px;
+  }
+
+  .rocket {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
   .drive {
     width: 33.8px;
     height: 30.2px;
@@ -1787,6 +1859,9 @@
   border-radius: 999px;
   overflow: hidden;
   @media (max-width: 768px) {
+    height: 16px;
+  }
+  @media (max-width: 992px) and (min-width: 768px) {
     height: 16px;
   }
   @media (max-width: 425px) {

@@ -189,13 +189,25 @@ export default function Home() {
     <>
       <div className={styles.landing} ref={landingRef}>
         <div className={styles.logoWrapper}>
-          <img src={logo.src} alt="logo" width={48} height={48} />
+          <img
+            src={logo.src}
+            alt="logo"
+            width={48}
+            height={48}
+            className={styles.blipLogo}
+          />
           <span className={styles.brandText}>Blip</span>
         </div>
 
         <header className={styles.header}>
           <div className={styles.brand}>
-            <img src={logo.src} alt="logo" width={32} height={32} />
+            <img
+              src={logo.src}
+              alt="logo"
+              width={32}
+              height={32}
+              className={styles.blipLogo}
+            />
             <span className={styles.brandText}>Blip</span>
           </div>
           <button
@@ -254,13 +266,13 @@ export default function Home() {
           <motion.section
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              opacity: {
-                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              },
+              // opacity: {
+              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
+              // },
             }}
             className={styles.textcontainer}
           >
@@ -400,11 +412,11 @@ export default function Home() {
             id="about"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : 0.6,
+              duration: shouldReduceMotion ? 0 : 0.7,
               ease: "easeOut",
-              opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
+              // opacity: { duration: shouldReduceMotion ? 0 : 0.4 },
             }}
             className={`${styles.content} ${styles.nopadding}`}
           >
@@ -524,23 +536,25 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.card4}>
-                <div className={styles.textwrap}>
-                  <img
-                    src={cardsettings.src}
-                    alt="copy"
-                    width={24}
-                    height={24}
-                  />
-                  <div className={styles.tag}>
-                    Every setting everywhere at once
+                <div>
+                  <div className={styles.textwrap}>
+                    <img
+                      src={cardsettings.src}
+                      alt="copy"
+                      width={24}
+                      height={24}
+                    />
+                    <div className={styles.tag}>
+                      Every setting everywhere at once
+                    </div>
                   </div>
-                </div>
-                <div className={styles.title2}>
-                  Persistent Settings Per Ad Account
-                </div>
-                <div className={styles.cardDes}>
-                  UTMs, page selections, ad name formulas, all saved, per ad
-                  account, so nothing resets on reload.
+                  <div className={styles.title2}>
+                    Persistent Settings Per Ad Account
+                  </div>
+                  <div className={styles.cardDes}>
+                    UTMs, page selections, ad name formulas, all saved, per ad
+                    account, so nothing resets on reload.
+                  </div>
                 </div>
                 <div className={styles.gridwrap1}>
                   <div className={styles.gridcontainer}>
@@ -648,17 +662,19 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.card2}>
-                <div className={styles.textwrap}>
-                  <img src={copy.src} alt="copy" width={24} height={24} />
-                  <div className={styles.tag}>Saving private templates</div>
-                </div>
-                <div className={styles.title2}>
-                  Apply saved templates for copy, CTA, and links
-                </div>
-                <div className={styles.cardDes}>
-                  Stop wasting time in Meta Ads Manager's clunky interface.
-                  Simply select your ideal settings once. We take care of the
-                  rest.
+                <div>
+                  <div className={styles.textwrap}>
+                    <img src={copy.src} alt="copy" width={24} height={24} />
+                    <div className={styles.tag}>Saving private templates</div>
+                  </div>
+                  <div className={styles.title2}>
+                    Apply saved templates for copy, CTA, and links
+                  </div>
+                  <div className={styles.cardDes}>
+                    Stop wasting time in Meta Ads Manager's clunky interface.
+                    Simply select your ideal settings once. We take care of the
+                    rest.
+                  </div>
                 </div>
                 <div className={styles.gridwrap}>
                   <div className={styles.gridcontainer}>
@@ -737,13 +753,13 @@ export default function Home() {
             id="features"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              opacity: {
-                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              },
+              // opacity: {
+              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
+              // },
             }}
           >
             <div className={styles.badgeTitle}>Built by the best</div>
@@ -780,13 +796,13 @@ export default function Home() {
             id="pricing"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
             transition={{
-              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.6,
+              duration: shouldReduceMotion ? 0 : isMobile ? 0.2 : 0.7,
               ease: "easeOut",
-              opacity: {
-                duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
-              },
+              // opacity: {
+              //   duration: shouldReduceMotion ? 0 : isMobile ? 0.1 : 0.4,
+              // },
             }}
             className={styles.wrapper}
           >
@@ -840,10 +856,22 @@ export default function Home() {
           <div className={styles.footer}>
             <div className={styles.footerLeft}>
               <div className={styles.leftTop}>
-                <img src={logo.src} alt="logo" width={32} height={32} />
+                <img
+                  src={logo.src}
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className={styles.blipLogo}
+                />
                 <span className={styles.brandTextFooter}>Blip</span>
               </div>
-              <div className={styles.footerEmail}>shree@withblip.com</div>
+              {/* <div className={styles.footerEmail}>shree@withblip.com</div> */}
+              <a
+                href="mailto:shree@withblip.com"
+                className={styles.footerEmail}
+              >
+                shree@withblip.com
+              </a>
             </div>
             <div className={styles.footerRight}>
               <div className={styles.footerPolicies}>Privacy Policy</div>
@@ -851,8 +879,13 @@ export default function Home() {
               <div className={styles.footerPoliciesNew}>
                 Blip use and transfer of information received from Google APIs
                 to any other app will adhere to{" "}
-                <span>Workspace API User Data and Developer Policy</span>,
-                including the <span>Limited use of user data.</span>
+                <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">
+                  Workspace API User Data and Developer Policy
+                </a>
+                , including the{" "}
+                <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use">
+                  Limited use of user data.
+                </a>
               </div>
             </div>
           </div>
