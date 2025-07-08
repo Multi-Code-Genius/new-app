@@ -638,7 +638,7 @@
   @media (max-width: 576px) {
     width: 100%;
     justify-content: center;
-    /* opacity: 1; */
+    opacity: 1;
   }
 }
 
@@ -654,6 +654,9 @@
   @media (max-width: 768px) {
     margin-bottom: 14px;
   }
+  @media (max-width: 576px) {
+    text-align: left;
+  }
 }
 
 .subtitle1 {
@@ -667,6 +670,9 @@
   color: #7f0f91;
   opacity: 0.6;
   margin: 0 auto;
+  @media (max-width: 576px) {
+    text-align: left;
+  }
 }
 
 .buttonGroup {
@@ -687,7 +693,7 @@
   gap: 10px;
   padding: 10px 5px 12px 5px;
   min-width: 231px;
-  border: 2px solid #7f0f91;
+  border: 1px solid #a556ae;
   border-radius: 16px;
   color: #7f0f91;
   font-size: 14px;
@@ -967,11 +973,9 @@
 
   .title1 {
     font-size: 24px;
-    text-align: left;
   }
 
   .subtitle1 {
-    text-align: left;
     font-size: 16px;
   }
 
@@ -1261,9 +1265,9 @@
   gap: 48px;
   width: 100%;
   justify-content: center;
-  /* @media (max-width: 1160px) {
+  @media (max-width: 1160px) and (min-width: 576px) {
     padding-left: 20px;
-  } */
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 16px;
