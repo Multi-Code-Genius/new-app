@@ -562,8 +562,6 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  display: block;
-  max-width: 100%;
 }
 
 .overlayButton {
@@ -589,7 +587,7 @@
 
   @media (max-width: 768px) {
     padding: 13.5px 49.8px 13.5px 49.8px;
-    width: 70%;
+    width: 60%;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.32px;
