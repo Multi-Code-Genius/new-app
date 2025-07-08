@@ -903,12 +903,14 @@ export default function Home() {
               <a
                 href="https://www.withblip.com/privacy-policy"
                 className={styles.footerPolicies}
+                target="_blank"
               >
                 Privacy Policy
               </a>
               <a
                 href="https://www.withblip.com/terms-of-service"
                 className={styles.footerPolicies}
+                target="_blank"
               >
                 Terms of Service
               </a>
