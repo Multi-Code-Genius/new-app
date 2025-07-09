@@ -554,7 +554,6 @@
 .imageWrapper1 {
   display: flex;
   position: relative;
-  display: inline-block;
   justify-content: center;
   width: 100%;
   max-width: 1200px;
@@ -564,14 +563,22 @@
   }
 }
 
-.image {
-  opacity: 0.4;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  aspect-ratio: 1200/718;
+.aspectImage {
+  aspect-ratio: 1200 / 900;
 }
 
+.aspectVideo {
+  aspect-ratio: 1200 / 700;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: aspect-ratio 0.3s ease;
+}
 .overlayButton {
   position: absolute;
   top: 50%;
@@ -594,12 +601,12 @@
   align-items: center;
 
   @media (max-width: 768px) {
-    padding: 13.5px 49.8px 13.5px 49.8px;
+    padding: 13.5px 49.8px;
     width: 60%;
     font-size: 16px;
-    font-weight: 900;
     letter-spacing: -0.32px;
   }
+
   @media (max-width: 350px) {
     padding: 10px 20px;
     width: 70%;
@@ -610,7 +617,6 @@
   margin-right: 8px;
   vertical-align: middle;
 }
-
 .content {
   max-width: 804px;
   width: 100%;

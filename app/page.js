@@ -72,10 +72,9 @@ export default function Home() {
   const menuBtnRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
   const landingRef = useRef();
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef(null);
   const [showButton1, setShowButton1] = useState(true);
-  const [showButton2, setShowButton2] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -92,43 +91,18 @@ export default function Home() {
     };
   }, []);
 
-  const handlePlay1 = () => {
-    if (videoRef1.current) {
-      videoRef1.current
-        .play()
-        .catch((err) => console.error("Play failed", err));
-    }
-    setShowButton1(false);
-  };
-
-  const handlePlay2 = () => {
-    if (videoRef2.current) {
-      videoRef2.current
-        .play()
-        .catch((err) => console.error("Play failed", err));
-    }
-    setShowButton2(false);
+  const handlePlay = () => {
+    setIsVideoPlaying(true);
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, 100);
   };
   useEffect(() => {
-    const video = videoRef1.current;
+    const video = videoRef.current;
     if (!video) return;
 
     const handlePlay = () => {
       setShowButton1(false);
-    };
-
-    video.addEventListener("play", handlePlay);
-
-    return () => {
-      video.removeEventListener("play", handlePlay);
-    };
-  }, []);
-  useEffect(() => {
-    const video = videoRef2.current;
-    if (!video) return;
-
-    const handlePlay = () => {
-      setShowButton2(false);
     };
 
     video.addEventListener("play", handlePlay);
@@ -363,69 +337,81 @@ export default function Home() {
             </div>
             <div className={styles.imageWrapper}>
               <div className={styles.videoContainer}>
-                <video
-                  ref={videoRef1}
-                  className={styles.image}
-                  controls
-                  muted
-                  loop
-                  poster={video.src}
-                  style={{
-                    opacity: showButton1 ? 0.4 : 1,
-                    transition: "opacity 0.3s ease",
-                  }}
-                >
-                  <source src="../videos/sample.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                {showButton1 && (
-                  <button
-                    onClick={handlePlay1}
-                    className={styles.overlayButton}
-                  >
+                {!isVideoPlaying ? (
+                  <>
                     <img
-                      src={plus.src}
-                      alt="icon"
-                      className={styles.icon2}
-                      width={24}
-                      height={24}
+                      src={video.src}
+                      alt="Video Thumbnail"
+                      className={`${styles.image} ${styles.aspectImage}`}
+                      onClick={handlePlay}
                     />
-                    Watch Demo Video
-                  </button>
+                    <button
+                      onClick={handlePlay}
+                      className={styles.overlayButton}
+                    >
+                      <img
+                        src={plus.src}
+                        alt="icon"
+                        className={styles.icon2}
+                        width={24}
+                        height={24}
+                      />
+                      Watch Demo Video
+                    </button>
+                  </>
+                ) : (
+                  <video
+                    ref={videoRef}
+                    className={`${styles.image} ${styles.aspectVideo}`}
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                    style={{ opacity: 1, transition: "opacity 0.3s ease" }}
+                  >
+                    <source src="../videos/sample.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 )}
               </div>
             </div>
           </motion.section>
 
           <div className={styles.imageWrapper1}>
-            <video
-              ref={videoRef2}
-              className={styles.image}
-              width={1200}
-              height={900}
-              controls
-              muted
-              loop
-              poster={video.src}
-              style={{
-                opacity: showButton2 ? 0.4 : 1,
-                transition: "opacity 0.3s ease",
-              }}
-            >
-              <source src="../videos/sample.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            {showButton2 && (
-              <button onClick={handlePlay2} className={styles.overlayButton}>
+            {!isVideoPlaying ? (
+              <>
                 <img
-                  src={plus.src}
-                  alt="icon"
-                  className={styles.icon2}
-                  width={50}
-                  height={50}
+                  src={video.src}
+                  alt="Video Thumbnail"
+                  className={`${styles.image} ${styles.aspectImage}`}
+                  onClick={handlePlay}
                 />
-                Watch Demo Video
-              </button>
+                <button onClick={handlePlay} className={styles.overlayButton}>
+                  <img
+                    src={plus.src}
+                    alt="icon"
+                    className={styles.icon2}
+                    width={24}
+                    height={24}
+                  />
+                  Watch Demo Video
+                </button>
+              </>
+            ) : (
+              <video
+                ref={videoRef}
+                className={`${styles.image} ${styles.aspectVideo}`}
+                width={1200}
+                height={900}
+                controls
+                muted
+                autoPlay
+                loop
+                style={{ opacity: 1, transition: "opacity 0.3s ease" }}
+              >
+                <source src="../videos/sample.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             )}
           </div>
 
