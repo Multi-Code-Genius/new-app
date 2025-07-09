@@ -366,8 +366,6 @@ export default function Home() {
                 <video
                   ref={videoRef1}
                   className={styles.image}
-                  width={1200}
-                  height={900}
                   controls
                   muted
                   loop
