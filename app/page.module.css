@@ -541,9 +541,15 @@
   margin: 0 auto;
   @media (max-width: 576px) {
     display: flex;
+    width: 100%;
   }
 }
 
+.videoContainer {
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
 .imageWrapper1 {
   display: flex;
   position: relative;
@@ -594,6 +600,7 @@
   }
   @media (max-width: 350px) {
     padding: 10px 20px;
+    width: 70%;
   }
 }
 

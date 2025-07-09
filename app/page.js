@@ -362,35 +362,40 @@ export default function Home() {
               <div className={styles.button1}>View Demo</div>
             </div>
             <div className={styles.imageWrapper}>
-              <video
-                ref={videoRef1}
-                className={styles.image}
-                width={1200}
-                height={900}
-                controls
-                muted
-                loop
-                poster={video.src}
-                style={{
-                  opacity: showButton1 ? 0.4 : 1,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <source src="../videos/sample.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              {showButton1 && (
-                <button onClick={handlePlay1} className={styles.overlayButton}>
-                  <img
-                    src={plus.src}
-                    alt="icon"
-                    className={styles.icon2}
-                    width={24}
-                    height={24}
-                  />
-                  Watch Demo Video
-                </button>
-              )}
+              <div className={styles.videoContainer}>
+                <video
+                  ref={videoRef1}
+                  className={styles.image}
+                  width={1200}
+                  height={900}
+                  controls
+                  muted
+                  loop
+                  poster={video.src}
+                  style={{
+                    opacity: showButton1 ? 0.4 : 1,
+                    transition: "opacity 0.3s ease",
+                  }}
+                >
+                  <source src="../videos/sample.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {showButton1 && (
+                  <button
+                    onClick={handlePlay1}
+                    className={styles.overlayButton}
+                  >
+                    <img
+                      src={plus.src}
+                      alt="icon"
+                      className={styles.icon2}
+                      width={24}
+                      height={24}
+                    />
+                    Watch Demo Video
+                  </button>
+                )}
+              </div>
             </div>
           </motion.section>
 
