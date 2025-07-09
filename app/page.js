@@ -348,7 +348,7 @@ export default function Home() {
               <br />
               quickest bulk ad <br /> uploader for
               <br />
-              Meta.
+              Meta{" "}
               <span className={`${styles.inlineIcon} ${styles.sparkle}`}>
                 <img src={star.src} alt="sparkles" />
               </span>{" "}
@@ -490,7 +490,7 @@ export default function Home() {
                     alt="rocket"
                     width={30}
                     height={30}
-                    className={styles.myImg}
+                    className={styles.rocketIcon}
                   />
                   <span>Fast launch all creatives</span>
                 </div>
@@ -891,7 +891,7 @@ export default function Home() {
                 />
                 <span className={styles.brandTextFooter}>Blip</span>
               </div>
-              {/* <div className={styles.footerEmail}>shree@withblip.com</div> */}
+
               <a
                 href="mailto:shree@withblip.com"
                 className={styles.footerEmail}

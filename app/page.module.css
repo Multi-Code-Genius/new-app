@@ -89,24 +89,25 @@
   line-height: 1.5;
   font-family: var(--font-nexa-round), sans-serif;
   max-width: 490px;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 
+  @media (max-width: 768px) {
+    text-align: left;
+    max-width: unset;
+    text-decoration-color: white;
+  }
+  @media (max-width: 678px) {
+    font-size: 14px;
+  }
   a {
     color: #fff;
     text-decoration: underline;
+    text-decoration-color: white;
     font-size: 16px;
     font-weight: 400;
     @media (max-width: 678px) {
       font-size: 14px;
     }
-  }
-
-  @media (max-width: 768px) {
-    text-align: unset;
-    max-width: unset;
-  }
-  @media (max-width: 678px) {
-    font-size: 14px;
   }
 }
 
