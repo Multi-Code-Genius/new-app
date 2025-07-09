@@ -682,7 +682,7 @@ export default function Home() {
                       Custom Ad Naming Conventions
                     </div>
                   </div>
-                  <div className={styles.addbutton1}>save settings</div>
+                  <div className={styles.addbutton1}>Save Settings</div>
                 </div>
               </div>
               <div className={styles.card2}>
