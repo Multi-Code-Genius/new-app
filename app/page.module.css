@@ -309,7 +309,7 @@
   }
 
   .header {
-    padding: 0 20px;
+    /* padding: 0 20px; */
     position: relative;
     margin-top: 0;
   }
