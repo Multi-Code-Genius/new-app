@@ -78,7 +78,6 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Fix iOS Safari 100vh bug
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -755,7 +754,7 @@ export default function Home() {
                       <div className={styles.progressBarFill1}></div>
                     </div>
                   </div>
-                  <div lassName={styles.uploadIconWrap1}>
+                  <div className={styles.uploadIconWrap1}>
                     <img
                       src={logo.src}
                       alt="Rocket"

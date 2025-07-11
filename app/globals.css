@@ -56,29 +56,14 @@
   box-sizing: border-box;
 }
 
-html {
-  /* Disable scroll-behavior to prevent conflicts with JS implementation */
-  scroll-behavior: auto;
-  height: 100%;
-  overflow: hidden;
-}
-
 body {
   /* Improve rendering performance */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-
-  /* Prevent layout shifts */
   margin: 0;
   padding: 0;
-
-  /* Optimize for animations */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* Optimize motion elements for better performance */
@@ -107,7 +92,3 @@ img {
 }
 
 /* Improve scrolling performance on mobile */
-body {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: none;
-}

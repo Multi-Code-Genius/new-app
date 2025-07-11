@@ -4,7 +4,6 @@
   font-family: var(--font-nexa-round), Arial, sans-serif;
   display: flex;
   position: relative;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
   color: #5a1a01;
@@ -12,10 +11,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: auto;
+  /* overflow: auto;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100); */
+  min-height: 100%;
+  overflow-y: auto;
   scroll-behavior: auto;
 }
 
