@@ -79,7 +79,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${nexaRound.variable}`}>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${nexaRound.variable}`}
+      >
         {children}
       </body>
     </html>

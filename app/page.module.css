@@ -15,6 +15,7 @@
   overflow: auto;
   overflow-x: hidden;
   overflow-y: scroll;
+  height: calc(var(--vh, 1vh) * 100);
   scroll-behavior: auto;
 }
 
