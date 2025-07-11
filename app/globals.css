@@ -59,10 +59,11 @@
 html {
   /* Disable scroll-behavior to prevent conflicts with JS implementation */
   scroll-behavior: auto;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-
   /* Improve rendering performance */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,6 +77,8 @@ body {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Optimize motion elements for better performance */
@@ -86,7 +89,6 @@ body {
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
