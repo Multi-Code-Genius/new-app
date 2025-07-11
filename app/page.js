@@ -880,52 +880,50 @@ export default function Home() {
               ease: "easeOut",
             }}
           >
-            <div>
-              <div className={styles.footerLeft}>
-                <div className={styles.leftTop}>
-                  <img
-                    src={logo.src}
-                    alt="logo"
-                    width={32}
-                    height={32}
-                    className={styles.blipLogo}
-                  />
-                  <span className={styles.brandTextFooter}>Blip</span>
-                </div>
-
-                <a
-                  href="mailto:shree@withblip.com"
-                  className={styles.footerEmail}
-                >
-                  shree@withblip.com
-                </a>
+            <div className={styles.footerLeft}>
+              <div className={styles.leftTop}>
+                <img
+                  src={logo.src}
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className={styles.blipLogo}
+                />
+                <span className={styles.brandTextFooter}>Blip</span>
               </div>
-              <div className={styles.footerRight}>
-                <a
-                  href="https://www.withblip.com/privacy-policy"
-                  className={styles.footerPolicies}
-                  target="_blank"
-                >
-                  Privacy Policy
+
+              <a
+                href="mailto:shree@withblip.com"
+                className={styles.footerEmail}
+              >
+                shree@withblip.com
+              </a>
+            </div>
+            <div className={styles.footerRight}>
+              <a
+                href="https://www.withblip.com/privacy-policy"
+                className={styles.footerPolicies}
+                target="_blank"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://www.withblip.com/terms-of-service"
+                className={styles.footerPolicies}
+                target="_blank"
+              >
+                Terms of Service
+              </a>
+              <div className={styles.footerPoliciesNew}>
+                Blip use and transfer of information received from Google APIs
+                to any other app will adhere to{" "}
+                <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">
+                  Workspace API User Data and Developer Policy
                 </a>
-                <a
-                  href="https://www.withblip.com/terms-of-service"
-                  className={styles.footerPolicies}
-                  target="_blank"
-                >
-                  Terms of Service
+                , including the{" "}
+                <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use">
+                  Limited use of user data.
                 </a>
-                <div className={styles.footerPoliciesNew}>
-                  Blip use and transfer of information received from Google APIs
-                  to any other app will adhere to{" "}
-                  <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">
-                    Workspace API User Data and Developer Policy
-                  </a>
-                  , including the{" "}
-                  <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use">
-                    Limited use of user data.
-                  </a>
-                </div>
               </div>
             </div>
           </motion.section>
